@@ -18,7 +18,6 @@ export const Posts = () => {
         setIsLoading(false);
       })
       .then((res) => {
-        console.log(res.data);
         setPosts(res.data);
         setPostsStorage(res.data);
         setIsLoading(false);
@@ -31,9 +30,7 @@ export const Posts = () => {
    */
   const handleSearchClick = (searchItem) => {
     if (String(searchItem).trim().length > 0) {
-      setPosts(() => {
-        return postsStorage;
-      });
+      setPosts(postsStorage);
       setPosts((current) =>
         current.filter((post) => {
           return String(post.title)
