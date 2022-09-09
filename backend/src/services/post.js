@@ -3,6 +3,7 @@ const axios = require("axios");
 const NAMESPACE = "Post Service";
 
 const getPosts = async () => {
+  // Add pagination
   logging.info(NAMESPACE, "getPosts() called.");
   try {
     return await axios.get("https://jsonplaceholder.typicode.com/posts");
