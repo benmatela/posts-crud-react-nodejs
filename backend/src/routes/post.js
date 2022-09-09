@@ -35,7 +35,7 @@ router.get("/posts/:id", async (req, res) => {
 router.post("/posts", async (req, res) => {
   logging.info(NAMESPACE, "/posts called.");
   try {
-    const post = req.body;
+    const post = req.body.post;
     console.log(post);
     const posts = await postService.add(post);
     return res.send(posts.data);

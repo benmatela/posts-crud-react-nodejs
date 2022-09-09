@@ -29,10 +29,10 @@ app.use((req, res, next) => {
 
 /** API rules */
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", appconfig.server.cors);
+  res.header("Access-Control-Allow-Origin", '*');
   res.header(
     "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization, Multipart/Form-Data"
+    "*"
   );
 
   if (req.method == "OPTIONS") {
