@@ -16,12 +16,10 @@ export const PostForm = (props) => {
   } = useForm();
 
   const modelValid = () => {
-    console.log(selectedPost.title);
-    return String(selectedPost.title).length > 0 && String(selectedPost.body).length > 0;
+    return String(selectedPost?.title).length > 0 && String(selectedPost?.body).length > 0;
   }
 
   const handleSubmitClick = async (event) => {
-    console.log(event)
     event.preventDefault();
     props.handleSubmitClick(selectedPost);
   };
