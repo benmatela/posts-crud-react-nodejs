@@ -1,8 +1,9 @@
 import axios from "axios";
 
 export const getPosts = async () => {
-  // Add Pagination
-  return await axios.get("https://jsonplaceholder.typicode.com/posts");
+  const posts = axios.get("http://localhost:3001/api/v1/posts");
+  posts.then(res => { console.log(res) })
+  return posts;
 };
 
 export const getPostById = async (query) => {

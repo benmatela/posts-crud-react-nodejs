@@ -5,7 +5,8 @@ const NAMESPACE = "Post Service";
 const getPosts = async () => {
   logging.info(NAMESPACE, "getPosts() called.");
   try {
-    return await axios.get("https://jsonplaceholder.typicode.com/posts");
+    const post = await axios.get("https://jsonplaceholder.typicode.com/posts");
+    return post;
   } catch (error) {
     logging.error(NAMESPACE, JSON.stringify(error));
     return error;

@@ -8,10 +8,16 @@ const NAMESPACE = "Post Routes";
 router.get("/posts", async (req, res) => {
   logging.info(NAMESPACE, "/posts called.");
   try {
-    return await postService.getPosts();
+    const posts = await postService.getPosts();
+    return res.send({
+      data: posts.data,
+    });
   } catch (error) {
     logging.error(NAMESPACE, JSON.stringify(error));
-    return error;
+    return res.send({
+      data: result,
+      error: JSON.stringify(error),
+    });
   }
 });
 
