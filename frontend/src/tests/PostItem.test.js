@@ -20,7 +20,7 @@ const dummyPosts = [
 afterEach(cleanup);
 
 describe("Test PostItem component", () => {
-  it("Should render", () => {
+  it("should render", () => {
     render(<PostItem posts={dummyPosts} />);
 
     const title = `(${dummyPosts[0].id}). ${dummyPosts[0].title}`;
@@ -30,7 +30,7 @@ describe("Test PostItem component", () => {
     expect(posts).toHaveLength(2);
   });
 
-  it("Should click post item", () => {
+  it("should click post item", () => {
     const handlePostItemClick = jest.fn();
 
     render(

@@ -4,7 +4,7 @@ import { Search } from "../components/shared/Search";
 afterEach(cleanup);
 
 describe("Test Search component", () => {
-  it("Should render", () => {
+  it("should render", () => {
     render(<Search searchPlaceholder={"Search Posts"} />);
 
     expect(document.getElementById("searchBar")).toBeTruthy();
@@ -14,7 +14,7 @@ describe("Test Search component", () => {
     );
   });
 
-  it("Should listen for search input", () => {
+  it("should listen for search input", () => {
     const handleSearchClick = jest.fn();
 
     render(

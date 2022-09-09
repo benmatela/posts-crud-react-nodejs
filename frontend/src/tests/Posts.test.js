@@ -8,7 +8,7 @@ enableHooks(jest);
 afterEach(cleanup);
 
 describe("Test Posts component", () => {
-  it("Should render", async () => {
+  it("should render", async () => {
     render(
       <BrowserRouter>
         <Posts />

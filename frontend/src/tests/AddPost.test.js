@@ -4,7 +4,7 @@ import { AddPost } from "../components/posts/AddPost";
 afterEach(cleanup);
 
 describe("Test AddPost component", () => {
-  it("Should render", () => {
+  it("should render", () => {
     render(
         <AddPost mode={"add"} />
     );
@@ -21,7 +21,7 @@ describe("Test AddPost component", () => {
     expect(document.getElementById("submitBtn").innerHTML).toEqual("Submit");
   });
 
-  it("Should handle click 'submitBtn'", () => {
+  it("should handle click 'submitBtn'", () => {
     // click submit button
   });
 });

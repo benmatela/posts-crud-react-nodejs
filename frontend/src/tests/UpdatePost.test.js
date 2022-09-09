@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 afterEach(cleanup);
 
 describe("Test AddPost component", () => {
-  it("Should render", () => {
+  it("should render", () => {
     render(
       <BrowserRouter>
         <UpdatePost />
@@ -25,11 +25,11 @@ describe("Test AddPost component", () => {
     expect(document.getElementById("deleteBtn").innerHTML).toEqual("Delete");
   });
 
-  it("Should handle click 'submitBtn'", () => {
+  it("should handle click 'submitBtn'", () => {
     // click submit button
   });
 
-  it("Should handle click 'deleteBtn'", () => {
+  it("should handle click 'deleteBtn'", () => {
     // click delete button
   });
 });

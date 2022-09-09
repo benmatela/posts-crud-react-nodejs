@@ -6,7 +6,7 @@ import { PostForm } from "../components/posts/PostForm";
 afterEach(cleanup);
 
 describe("Test PostForm component", () => {
-  it("Should render 'update' mode", () => {
+  it("should render 'update' mode", () => {
     render(
       <PostForm
         mode={"update"}
@@ -31,7 +31,7 @@ describe("Test PostForm component", () => {
     expect(document.getElementById("deleteBtn").innerHTML).toEqual("Delete");
   });
 
-  it("Should render 'add' mode", () => {
+  it("should render 'add' mode", () => {
     const handleSubmitClick = jest.fn();
     const handleDeletePostClick = jest.fn();
 
@@ -62,8 +62,7 @@ describe("Test PostForm component", () => {
     expect(document.getElementById("deleteBtn")).not.toBeTruthy();
   });
 
-  it("Should click 'submitBtn'", () => {
-    // click submit button
+  it("should click 'submitBtn'", () => {
     const handleSubmitClick = jest.fn();
 
     render(
@@ -84,7 +83,7 @@ describe("Test PostForm component", () => {
     expect(handleSubmitClick).toBeCalled();
   });
 
-  it("Should click 'deleteBtn'", () => {
+  it("should click 'deleteBtn'", () => {
     const handleDeletePostClick = jest.fn();
 
     render(
