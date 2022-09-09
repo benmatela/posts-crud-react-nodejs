@@ -76,7 +76,7 @@ export const Posts = () => {
             searchPlaceholder={searchPlaceholder}
           />
           <div className="m-3"></div>
-          <div className="overflow-y-scroll h-[500px]" id="postItems">
+          <div className="overflow-y-scroll h-[700px]" id="postItems">
             <PostItem handlePostItemClick={handlePostItemClick} posts={posts} />
           </div>
         </div>

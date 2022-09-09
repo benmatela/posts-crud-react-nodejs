@@ -9,7 +9,7 @@ export const Navbar = () => {
   };
   return (
     <div className="text-white bg-[#3120E0] flex justify-between items-center h-24 w-[100%] mb-3 mx-auto px-4">
-      <h1 className="w-full text-2xl font-bold pl-24">Posts</h1>
+      <h1 className="w-full text-[#F0EABE] text-2xl font-bold pl-24">Posts</h1>
       <ul className="hidden md:flex">
         <li className="p-4 pr-24">
           <Link to="/posts" className="p-4">
