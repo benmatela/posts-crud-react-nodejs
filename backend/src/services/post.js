@@ -12,6 +12,17 @@ const getPosts = async () => {
   }
 };
 
+const getById = async (id) => {
+  logging.info(NAMESPACE, "getPosts() called.");
+  try {
+    return await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  } catch (error) {
+    logging.error(NAMESPACE, JSON.stringify(error));
+    return error;
+  }
+};
+
 module.exports = {
-  getPosts: getPosts,
+  getPosts,
+  getById,
 };

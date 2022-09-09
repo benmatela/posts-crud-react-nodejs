@@ -4,8 +4,8 @@ export const getPosts = async () => {
   return await axios.get("http://localhost:3001/api/v1/posts");
 };
 
-export const getPostById = async (query) => {
-  return await axios.get("http://localhost:3001/api/v1/posts");
+export const getPostById = async (id) => {
+  return await axios.get(`http://localhost:3001/api/v1/posts/${id}`, );
 };
 
 export const deletePostById = async (id) => {
