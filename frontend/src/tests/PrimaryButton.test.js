@@ -3,31 +3,34 @@ import { PrimaryButton } from "../components/shared/PrimaryButton";
 
 afterEach(cleanup);
 
+const id = "testBtn";
+const label = "Test";
+const className = "text-white";
+
 describe("Test PrimaryButton component", () => {
   it("should render", () => {
-    const id = "testBtn";
-    const label = "Test";
-    const className = "hover:bg-[#67ade3] bg-[#3120E0] mb-4 mt-2 h-10 w-80 rounded-md text-white";
+    render(<PrimaryButton id={id} label={label} className={className} />);
+
+    expect(document.getElementById("testBtn").innerHTML).toEqual("Test");
+
+    expect(document.getElementById("testBtn").classList.contains("text-white"));
+  });
+
+  it("should click 'testBtn'", () => {
+    const onClick = jest.fn();
+
     render(
       <PrimaryButton
         id={id}
         label={label}
         className={className}
+        onClick={onClick}
       />
     );
-    expect(document.getElementById("testBtn").innerHTML).toEqual("Test");
+
+    const button = document.getElementById("testBtn");
+    fireEvent.click(button);
+
+    expect(onClick).toBeCalled();
   });
-
-  //   it("should click post item", () => {
-  //     const handlePostItemClick = jest.fn();
-
-  //     render(
-  //       <PostItem posts={dummyPosts} handlePostItemClick={handlePostItemClick} />
-  //     );
-
-  //     const button = document.getElementById("1");
-  //     fireEvent.click(button);
-
-  //     expect(handlePostItemClick).toBeCalled();
-  //   });
 });
