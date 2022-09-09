@@ -9,6 +9,10 @@ export const AddPost = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  /**
+   * Handle PostForm 'submit' event and return data
+   * @param {*} data
+   */
   const handleSubmitClick = async (data) => {
     setSubmitting(true);
     setSuccessMessage("");

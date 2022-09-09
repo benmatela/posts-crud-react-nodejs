@@ -21,8 +21,7 @@ router.get("/posts", async (req, res) => {
 router.get("/posts/:id", async (req, res) => {
   logging.info(NAMESPACE, "/posts/:id called.");
   try {
-    const id = req.params.id;
-    const posts = await postService.getById(id);
+    const posts = await postService.getById(req.params.id);
     return res.send(posts.data);
   } catch (error) {
     logging.error(NAMESPACE, JSON.stringify(error));
@@ -35,8 +34,7 @@ router.get("/posts/:id", async (req, res) => {
 router.post("/posts", async (req, res) => {
   logging.info(NAMESPACE, "/posts called.");
   try {
-    const post = req.body.post;
-    const posts = await postService.add(post);
+    const posts = await postService.add(req.body.post);
     return res.send(posts.data);
   } catch (error) {
     logging.error(NAMESPACE, JSON.stringify(error));
@@ -49,9 +47,7 @@ router.post("/posts", async (req, res) => {
 router.put("/posts", async (req, res) => {
   logging.info(NAMESPACE, "/posts called.");
   try {
-    const id = req.params.id;
-    const post = req.body;
-    const posts = await postService.update(post);
+    const posts = await postService.update(req.body);
     return res.send(posts.data);
   } catch (error) {
     logging.error(NAMESPACE, JSON.stringify(error));
@@ -64,8 +60,7 @@ router.put("/posts", async (req, res) => {
 router.delete("/posts/:id", async (req, res) => {
   logging.info(NAMESPACE, "/posts/:id called.");
   try {
-    const id = req.params.id;
-    const posts = await postService.remove(id);
+    const posts = await postService.remove(req.params.id);
     return res.send(posts.data);
   } catch (error) {
     logging.error(NAMESPACE, JSON.stringify(error));

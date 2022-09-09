@@ -22,7 +22,7 @@ export const UpdatePost = () => {
   });
 
   /**
-   * Handle PostForm 'submit' and return data
+   * Handle PostForm 'submit' event and return data
    * @param {*} data
    */
   const handleSubmitClick = async (data) => {
@@ -39,7 +39,7 @@ export const UpdatePost = () => {
   };
 
   /**
-   * Handle PostForm 'delete' and return data
+   * Handle PostForm 'delete' event and return data
    * @param {*} data
    */
   const handleDeletePostClick = async (data) => {
