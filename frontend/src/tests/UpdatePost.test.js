@@ -24,12 +24,4 @@ describe("Test AddPost component", () => {
 
     expect(document.getElementById("deleteBtn").innerHTML).toEqual("Delete");
   });
-
-  it("should handle click 'submitBtn'", () => {
-    // click submit button
-  });
-
-  it("should handle click 'deleteBtn'", () => {
-    // click delete button
-  });
 });
