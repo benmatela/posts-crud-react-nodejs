@@ -1,0 +1,12 @@
+.MuiInputBase-input {
+    width: 300px;
+}
+
+.MuiInputBase-root {
+    margin-top: 10px;
+}
+
+textarea.form-input {
+    border: 1px rgba(103, 100, 100, 0.54) solid;
+    border-radius: 5px;
+}
