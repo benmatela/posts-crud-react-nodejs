@@ -5,6 +5,7 @@ const logging = require("../utils/logging");
 
 const NAMESPACE = "Post Routes";
 
+// Add Model validation
 router.get("/posts", async (req, res) => {
   logging.info(NAMESPACE, "/posts called.");
   try {

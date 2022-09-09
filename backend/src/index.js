@@ -2,6 +2,9 @@ const express = require("express");
 const appconfig = require("./utils/appconfig");
 const logging = require("./utils/logging");
 const postRoutes = require("./routes/post");
+const swaggerUi = require("swagger-ui-express");
+// Implement A Swagger API Documentation Page
+const swaggerDocument = require("../swagger/config");
 const app = express();
 
 const NAMESPACE = "Server";
@@ -44,6 +47,13 @@ app.get("/", (req, res) => {
   res.send({ message: "Welcome to Posts API" });
 });
 app.use("/api/v1/", postRoutes);
+
+/** Swagger */
+app.use(
+  "/api-docs",
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerDocument)
+);
 
 /** Error handling */
 app.use((req, res, next) => {
