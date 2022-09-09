@@ -5,7 +5,7 @@ This project was written with [Node.js](https://nodejs.org/en/) v16.13.1
 ### How it works:
 
 
-* Backend for `/frontend` Post app.
+* Backend for `/frontend` app.
 * Allows CRUD operations 
 
 
