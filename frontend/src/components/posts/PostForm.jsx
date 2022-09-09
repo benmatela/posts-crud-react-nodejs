@@ -15,7 +15,13 @@ export const PostForm = (props) => {
     formState: { errors },
   } = useForm();
 
+  const modelValid = () => {
+    console.log(selectedPost.title);
+    return String(selectedPost.title).length > 0 && String(selectedPost.body).length > 0;
+  }
+
   const handleSubmitClick = async (event) => {
+    console.log(event)
     event.preventDefault();
     props.handleSubmitClick(selectedPost);
   };
@@ -96,7 +102,7 @@ export const PostForm = (props) => {
               id="submitBtn"
               className="hover:bg-[#67ade3] bg-[#3120E0] mb-4 mt-2 h-10 w-80 rounded-md text-white"
               onClick={(event) => handleSubmit(handleSubmitClick(event))}
-              disabled={props.deleting}
+              disabled={props.deleting || !modelValid()}
             >
               Submit
             </button>
@@ -109,7 +115,7 @@ export const PostForm = (props) => {
               id="deleteBtn"
               className="hover:bg-[#e08683] bg-[#d9534f] mb-4 mt-2 h-10 w-80 rounded-md text-white"
               onClick={(event) => handleDeletePostClick(event)}
-              disabled={props.submitting}
+              disabled={props.submitting || !modelValid()}
             >
               Delete
             </button>
