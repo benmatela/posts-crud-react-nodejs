@@ -5,9 +5,7 @@ afterEach(cleanup);
 
 describe("Test AddPost component", () => {
   it("should render", () => {
-    render(
-        <AddPost mode={"add"} />
-    );
+    render(<AddPost mode={"add"} />);
 
     expect(document.getElementById("pageHeader").innerHTML).toEqual("Add Post");
 
@@ -19,9 +17,5 @@ describe("Test AddPost component", () => {
 
     expect(document.getElementById("submitBtn")).toBeTruthy();
     expect(document.getElementById("submitBtn").innerHTML).toEqual("Submit");
-  });
-
-  it("should handle click 'submitBtn'", () => {
-    // click submit button
   });
 });
