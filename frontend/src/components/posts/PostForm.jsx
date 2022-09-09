@@ -5,6 +5,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import "./PostForm.css";
 import PostModel from "./models/post.model";
+import { PrimaryButton } from "../shared/PrimaryButton";
 
 export const PostForm = (props) => {
   const [isUpdate] = useState(props.mode === "update" ? true : false);
@@ -16,8 +17,11 @@ export const PostForm = (props) => {
   } = useForm();
 
   const modelValid = () => {
-    return String(selectedPost?.title).length > 0 && String(selectedPost?.body).length > 0;
-  }
+    return (
+      String(selectedPost?.title).length > 0 &&
+      String(selectedPost?.body).length > 0
+    );
+  };
 
   const handleSubmitClick = async (event) => {
     event.preventDefault();
@@ -96,27 +100,25 @@ export const PostForm = (props) => {
           <h1 className="text-center text-[#28a745] font-bold">Saving...</h1>
         ) : (
           <div>
-            <button
-              id="submitBtn"
+            <PrimaryButton
+              id={"submitBtn"}
+              label={"Submit"}
               className="hover:bg-[#67ade3] bg-[#3120E0] mb-4 mt-2 h-10 w-80 rounded-md text-white"
               onClick={(event) => handleSubmit(handleSubmitClick(event))}
               disabled={props.deleting || !modelValid()}
-            >
-              Submit
-            </button>
+            />
             <br />
           </div>
         )}
         {isUpdate ? (
           !props.deleting ? (
-            <button
+            <PrimaryButton
               id="deleteBtn"
+              label={"Delete"}
               className="hover:bg-[#e08683] bg-[#d9534f] mb-4 mt-2 h-10 w-80 rounded-md text-white"
               onClick={(event) => handleDeletePostClick(event)}
               disabled={props.submitting || !modelValid()}
-            >
-              Delete
-            </button>
+            />
           ) : (
             <h1 className="text-center text-[#d9534f] font-bold">
               Deleting...
