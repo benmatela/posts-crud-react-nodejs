@@ -36,7 +36,6 @@ router.post("/posts", async (req, res) => {
   logging.info(NAMESPACE, "/posts called.");
   try {
     const post = req.body.post;
-    console.log(post);
     const posts = await postService.add(post);
     return res.send(posts.data);
   } catch (error) {
@@ -44,7 +43,22 @@ router.post("/posts", async (req, res) => {
     return res.send({
       error: JSON.stringify(error),
     });
-  }})
+  }
+});
+
+router.put("/posts", async (req, res) => {
+  logging.info(NAMESPACE, "/posts called.");
+  try {
+    const post = req.body.post;
+    const posts = await postService.update(post);
+    return res.send(posts.data);
+  } catch (error) {
+    logging.error(NAMESPACE, JSON.stringify(error));
+    return res.send({
+      error: JSON.stringify(error),
+    });
+  }
+});
 
 router.delete("/posts/:id", async (req, res) => {
   logging.info(NAMESPACE, "/posts/:id called.");

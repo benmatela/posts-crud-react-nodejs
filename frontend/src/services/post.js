@@ -15,9 +15,9 @@ export const deletePostById = async (id) => {
 };
 
 export const addPost = async (post) => {
-  return await axios.post(`${postApiURL}`, post);
+  return await axios.post(postApiURL, post);
 };
 
 export const updatePost = async (post) => {
-  return await axios.put(`${postApiURL}/${post.id}`, post);
+  return await axios.put(postApiURL, post);
 };
