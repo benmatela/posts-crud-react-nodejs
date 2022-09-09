@@ -44,7 +44,7 @@ app.use((req, res, next) => {
 
 /** Routes */
 app.get("/", (req, res) => {
-  res.send({ message: "Welcome" });
+  res.send({ message: "Welcome to Posts API" });
 });
 app.use("/api/v1/", postRoutes);
 

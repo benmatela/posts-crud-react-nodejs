@@ -54,4 +54,37 @@ The folder structure of this app:
 | package.json             | Contains npm dependencies as well as [build scripts](#what-if-a-library-isnt-on-definitelytyped)   | tsconfig.json            | Config settings for compiling source code only written in TypeScript    
 | tslint.json              | Config settings for TSLint code style checking  
 
+## Testing
+The tests are  written in Mocha and the assertions done using Chai
+
+``` ts
+const { expect } = require("chai");
+const request = require("supertest");
+const app = require("../src/index");
+```
+
+### Example post.spec.js
+``` ts
+import { cleanup, render } from "@testing-library/react";
+import { AddPost } from "../components/posts/AddPost";
+
+it("Should render", () => {
+    render(
+        <AddPost mode={"add"} />
+    );
+
+    expect(document.getElementById("pageHeader").innerHTML).toEqual("Add Post");
+
+    expect(document.getElementById("titleLabel").innerHTML).toEqual("Title:");
+    expect(document.getElementById("title").value).toEqual("");
+
+    expect(document.getElementById("bodyLabel").innerHTML).toEqual("Body:");
+    expect(document.getElementById("body").value).toEqual("");
+
+    expect(document.getElementById("submitBtn")).toBeTruthy();
+    expect(document.getElementById("submitBtn").innerHTML).toEqual("Submit");
+});
+```
+
+
 # Frontend
