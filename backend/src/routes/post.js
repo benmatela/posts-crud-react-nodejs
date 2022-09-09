@@ -9,13 +9,10 @@ router.get("/posts", async (req, res) => {
   logging.info(NAMESPACE, "/posts called.");
   try {
     const posts = await postService.getPosts();
-    return res.send({
-      data: posts.data,
-    });
+    return res.send(posts.data);
   } catch (error) {
     logging.error(NAMESPACE, JSON.stringify(error));
     return res.send({
-      data: result,
       error: JSON.stringify(error),
     });
   }

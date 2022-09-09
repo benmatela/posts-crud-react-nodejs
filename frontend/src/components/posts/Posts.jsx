@@ -18,10 +18,10 @@ export const Posts = () => {
         setIsLoading(false);
       })
       .then((res) => {
-        console.log(res);
-        // setPosts(res.data);
-        // setPostsStorage(res.data);
-        // setIsLoading(false);
+        console.log(res.data);
+        setPosts(res.data);
+        setPostsStorage(res.data);
+        setIsLoading(false);
       });
   }, []);
 

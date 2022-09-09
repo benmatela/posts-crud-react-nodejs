@@ -1,9 +1,7 @@
 import axios from "axios";
 
 export const getPosts = async () => {
-  const posts = axios.get("http://localhost:3001/api/v1/posts");
-  posts.then(res => { console.log(res) })
-  return posts;
+  return await axios.get("http://localhost:3001/api/v1/posts");
 };
 
 export const getPostById = async (query) => {
@@ -19,5 +17,8 @@ export const addPost = async (post) => {
 };
 
 export const updatePost = async (post) => {
-  return await axios.put(`https://jsonplaceholder.typicode.com/posts/${post.id}`, post);
+  return await axios.put(
+    `https://jsonplaceholder.typicode.com/posts/${post.id}`,
+    post
+  );
 };
