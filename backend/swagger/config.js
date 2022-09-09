@@ -50,83 +50,8 @@ module.exports = {
         },
       },
     },
-    "/api/v1/posts/put/{id}": {
-      put: {
-        tags: ["Posts"],
-        summary: "Update post by ID",
-        parameters: [
-          {
-            in: "path",
-            name: "id",
-            description: "Find by ID and update",
-            type: "string",
-          },
-        ],
-        requestBody: {
-          content: {
-            "application/json": {
-              schema: {
-                $ref: "#/definitions/Post",
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            description: "OK",
-            schema: {
-              $ref: "#/definitions/Post",
-            },
-          },
-        },
-      },
-    },
-    "/api/v1/posts/post": {
-      post: {
-        tags: ["Posts"],
-        summary: "Create new post",
-        parameters: [],
-        requestBody: {
-          content: {
-            "application/json": {
-              schema: {
-                $ref: "#/definitions/Post",
-              },
-            },
-          },
-        },
-        responses: {
-          201: {
-            description: "OK",
-            schema: {
-              $ref: "#/definitions/Post",
-            },
-          },
-        },
-      },
-    },
-    "/api/v1/posts/delete/{id}": {
-      delete: {
-        tags: ["Posts"],
-        summary: "Delete post",
-        parameters: [
-          {
-            in: "path",
-            name: "id",
-            description: "Find by ID and delete",
-            type: "string",
-          },
-        ],
-        responses: {
-          200: {
-            description: "OK",
-            schema: {
-              $ref: "#/definitions/Post",
-            },
-          },
-        },
-      },
-    },
+
+    // Add more endpoints
   },
   definitions: {
     Post: {
