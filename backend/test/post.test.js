@@ -36,7 +36,7 @@ describe("Post", () => {
     });
   });
 
-  describe("POST new post", () => {
+  describe("CREATE new post", () => {
     it("should create a single a post", (done) => {
       const newPost = new PostModel(0, 0, "Test", "This is a test");
       request(app)
@@ -44,8 +44,8 @@ describe("Post", () => {
         .send(newPost)
         .expect(200)
         .then((res) => {
-          const response = res._body;
-          expect(String(response.title)).to.be.equal(String(newPost.title));
+          const response = res.body;
+          expect(Number(response.id)).to.be.equal(101);
           done();
         })
         .catch((err) => done(err));
@@ -54,14 +54,13 @@ describe("Post", () => {
 
   describe("UPDATE post", () => {
     it("should update a post", (done) => {
-      const updatedPost = new PostModel(1, 1, "Test", "This is a test");
+      const updatedPost = new PostModel(0, 0, "Test", "This is a test");
       request(app)
         .put("/api/v1/posts")
         .send(updatedPost)
         .expect(200)
         .then((res) => {
-          const response = res._body;
-          expect(String(response.title)).to.be.equal(String(newPost.title));
+          expect(res.statusCode).to.be.equal(200);
           done();
         })
         .catch((err) => done(err));
@@ -74,8 +73,7 @@ describe("Post", () => {
         .delete("/api/v1/posts/1")
         .expect(200)
         .then((res) => {
-          const response = res._body;
-          expect(String(response.title)).to.be.equal(String(newPost.title));
+          expect(res.statusCode).equal(200);
           done();
         })
         .catch((err) => done(err));

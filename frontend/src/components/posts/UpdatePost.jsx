@@ -29,7 +29,7 @@ export const UpdatePost = () => {
     setSubmitting(true);
     const updated = await updatePost(data);
     if (updated.status === 200) {
-      setSuccessMessage(`Post with ID: ${updated.data.userId} updated.`);
+      setSuccessMessage(`Post updated.`);
     } else {
       setErrorMessage("Error while updating a post.");
     }
