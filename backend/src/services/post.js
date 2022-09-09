@@ -25,10 +25,11 @@ const getById = async (id) => {
 const update = async (post) => {
   logging.info(NAMESPACE, "update() called.");
   try {
-    return await axios.put(
+    const updated = await axios.put(
       `https://jsonplaceholder.typicode.com/posts/${post.id}`,
       post
     );
+    return updated;
   } catch (error) {
     logging.error(NAMESPACE, JSON.stringify(error));
     return error;

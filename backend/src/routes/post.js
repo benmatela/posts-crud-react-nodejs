@@ -49,7 +49,8 @@ router.post("/posts", async (req, res) => {
 router.put("/posts", async (req, res) => {
   logging.info(NAMESPACE, "/posts called.");
   try {
-    const post = req.body.post;
+    const id = req.params.id;
+    const post = req.body;
     const posts = await postService.update(post);
     return res.send(posts.data);
   } catch (error) {
