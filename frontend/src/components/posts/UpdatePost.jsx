@@ -27,6 +27,8 @@ export const UpdatePost = () => {
    */
   const handleSubmitClick = async (data) => {
     setSubmitting(true);
+    setSuccessMessage("");
+    setErrorMessage("");
     const updated = await updatePost(data);
     if (updated.status === 200) {
       setSuccessMessage(`Post updated.`);
@@ -42,6 +44,8 @@ export const UpdatePost = () => {
    */
   const handleDeletePostClick = async (data) => {
     setDeleting(true);
+    setSuccessMessage("");
+    setErrorMessage("");
     await deletePostById(data.id);
     setDeleting(false);
     navigate("/posts");

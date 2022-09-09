@@ -10,7 +10,7 @@ export const PostItem = (props) => {
     return (
       <div
         key={i}
-        className="flex py-1 cursor-pointer hover:border-1 my-1 bg-[#F0EABE] text-[#000300] w-[100%] rounded-md font-medium"
+        className="flex py-1 cursor-pointer hover:bg-[#ece9cf] my-1 bg-[#F0EABE] text-[#000300] w-[100%] rounded-md font-medium"
       >
         <span
           id={post.id}

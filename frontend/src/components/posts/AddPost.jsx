@@ -11,6 +11,8 @@ export const AddPost = () => {
 
   const handleSubmitClick = async (data) => {
     setSubmitting(true);
+    setSuccessMessage("");
+    setErrorMessage("");
     const newPost = await addPost(data);
     if (newPost.status === 200) {
       setSuccessMessage(`Post Created with ID: ${newPost.data.id}.`);
