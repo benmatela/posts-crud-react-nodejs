@@ -22,7 +22,45 @@ const getById = async (id) => {
   }
 };
 
+const update = async (post) => {
+  logging.info(NAMESPACE, "update() called.");
+  try {
+    return await axios.put(
+      `https://jsonplaceholder.typicode.com/posts/${post.id}`,
+      post
+    );
+  } catch (error) {
+    logging.error(NAMESPACE, JSON.stringify(error));
+    return error;
+  }
+};
+
+const add = async (post) => {
+  logging.info(NAMESPACE, "add() called.");
+  try {
+    return await axios.post(`https://jsonplaceholder.typicode.com/posts`, post);
+  } catch (error) {
+    logging.error(NAMESPACE, JSON.stringify(error));
+    return error;
+  }
+};
+
+const remove = async (id) => {
+  logging.info(NAMESPACE, "remove() called.");
+  try {
+    return await axios.delete(
+      `https://jsonplaceholder.typicode.com/posts/${id}`
+    );
+  } catch (error) {
+    logging.error(NAMESPACE, JSON.stringify(error));
+    return error;
+  }
+};
+
 module.exports = {
   getPosts,
   getById,
+  remove,
+  add,
+  update,
 };

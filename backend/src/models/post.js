@@ -7,6 +7,4 @@ class PostModel {
   }
 }
 
-module.exports = {
-  PostModel
-};
+module.exports = PostModel

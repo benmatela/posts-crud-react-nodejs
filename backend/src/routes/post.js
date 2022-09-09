@@ -19,10 +19,38 @@ router.get("/posts", async (req, res) => {
 });
 
 router.get("/posts/:id", async (req, res) => {
-  logging.info(NAMESPACE, "/posts called.");
+  logging.info(NAMESPACE, "/posts/:id called.");
   try {
     const id = req.params.id;
     const posts = await postService.getById(id);
+    return res.send(posts.data);
+  } catch (error) {
+    logging.error(NAMESPACE, JSON.stringify(error));
+    return res.send({
+      error: JSON.stringify(error),
+    });
+  }
+});
+
+router.post("/posts", async (req, res) => {
+  logging.info(NAMESPACE, "/posts called.");
+  try {
+    const post = req.body;
+    console.log(post);
+    const posts = await postService.add(post);
+    return res.send(posts.data);
+  } catch (error) {
+    logging.error(NAMESPACE, JSON.stringify(error));
+    return res.send({
+      error: JSON.stringify(error),
+    });
+  }})
+
+router.delete("/posts/:id", async (req, res) => {
+  logging.info(NAMESPACE, "/posts/:id called.");
+  try {
+    const id = req.params.id;
+    const posts = await postService.remove(id);
     return res.send(posts.data);
   } catch (error) {
     logging.error(NAMESPACE, JSON.stringify(error));
