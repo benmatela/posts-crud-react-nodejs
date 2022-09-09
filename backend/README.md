@@ -1,12 +1,12 @@
-# Frontend
+# Backend
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### How it works:
 
 
-* Load a list of Posts
-* To edit/remove a Post, simply click on a post from the list.
+* Backend for `/frontend` Post app.
+* Allows CRUD operations 
 
 
 # Pre-requisites
@@ -24,9 +24,9 @@ Installs dependencies.
 ### `npm start`
 
 Runs the app in the development mode.
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
 
-### `npm test – –coverage a`
+### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 
