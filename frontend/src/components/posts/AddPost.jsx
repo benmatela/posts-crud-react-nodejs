@@ -4,7 +4,9 @@ import { PostForm } from "./PostForm";
 import { addPost } from "../../services/post";
 
 export const AddPost = () => {
-  const [selectedPost] = useState({ selected: new PostModel(0, 0, "", "") });
+  const [selectedPost] = useState({
+    selected: new PostModel(0, 0, "", ""),
+  });
   const [submitting, setSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -21,6 +23,7 @@ export const AddPost = () => {
     const newPost = await addPost(data);
     if (newPost.status === 200) {
       setSuccessMessage(`Post Created with ID: ${newPost.data.id}.`);
+      // Clear form
     } else {
       setErrorMessage("Error while creating a post.");
     }

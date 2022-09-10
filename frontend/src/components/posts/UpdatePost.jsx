@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import PostModel from "./models/post.model";
 import { deletePostById, updatePost } from "../../services/post";
 import { PostForm } from "./PostForm";
 
@@ -14,14 +13,7 @@ export const UpdatePost = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [loaderSubmitMessage, setLoaderSubmitMessage] = useState("");
   const [loaderDeleteMessage, setLoaderDeleteMessage] = useState("");
-  const [selectedPost] = useState({
-    selected: new PostModel(
-      state?.selected.userId || 0,
-      state?.selected.id || 0,
-      state?.selected.title || "",
-      state?.selected.body || ""
-    ),
-  });
+  const [selectedPost] = useState(state);
 
   /**
    * Handle PostForm 'submit' event and return data
