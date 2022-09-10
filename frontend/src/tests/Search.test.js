@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { Search } from "../components/shared/Search";
 
 afterEach(cleanup);
@@ -7,19 +7,13 @@ describe("Test Search component", () => {
   it("should render", () => {
     const view = render(<Search searchPlaceholder={"Search Posts"} />);
 
-    expect(view).toMatchSnapshot();
-
-    expect(document.getElementById("searchBar")).toBeTruthy();
-
-    expect(document.getElementById("searchBar").placeholder).toEqual(
-      "Search Posts"
-    );
+    expect(view).toMatchSnapshot(); 
   });
 
   it("should listen for search input", () => {
     const handleSearchClick = jest.fn();
 
-    render(
+    const view = render(
       <Search
         handleSearchClick={handleSearchClick}
         searchPlaceholder={"Search Posts"}
