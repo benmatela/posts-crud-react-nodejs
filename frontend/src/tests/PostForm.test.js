@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import PostModel from "../components/posts/models/post.model";
 import { PostForm } from "../components/posts/PostForm";
@@ -20,11 +20,9 @@ describe("Test PostForm component", () => {
 
     expect(view).toMatchSnapshot();
 
-    const deleteBtn = document.getElementById("deleteBtn");
-    expect(deleteBtn).toBeTruthy();
+    expect(screen.getByTestId("deleteBtn").innerHTML).toEqual("Delete");
 
-    const submitBtn = document.getElementById("submitBtn");
-    expect(submitBtn).toBeTruthy();
+    expect(screen.getByTestId("submitBtn").innerHTML).toEqual("Submit");
   });
 
   it("should render 'add' view mode", () => {
@@ -64,7 +62,7 @@ describe("Test PostForm component", () => {
       />
     );
 
-    const button = document.getElementById("submitBtn");
+    const button = screen.getByTestId("submitBtn");
     fireEvent.click(button);
 
     expect(handleSubmitClick).toBeCalled();
@@ -85,7 +83,7 @@ describe("Test PostForm component", () => {
       />
     );
 
-    const button = document.getElementById("deleteBtn");
+    const button = screen.getByTestId("deleteBtn");
     fireEvent.click(button);
 
     expect(handleDeletePostClick).toBeCalled();

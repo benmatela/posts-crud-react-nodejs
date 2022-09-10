@@ -83,6 +83,7 @@ export const UpdatePost = () => {
       <h1
         className="text-center text-gray-600 text-3xl font-bold"
         id="pageHeader"
+        data-testid="pageHeader"
       >
         Update Post
       </h1>

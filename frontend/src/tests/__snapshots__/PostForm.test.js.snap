@@ -1,202 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test PostForm component should render 'add' view mode 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <form
-        class="bg-white h-min mt-10"
-        id="addForm"
-        name="addForm"
-      >
-        <div
-          class="text-center m-2"
-        >
-          <br />
-          <label
-            class="MuiFormLabel-root MuiInputLabel-root m-2 MuiInputLabel-animated"
-            id="titleLabel"
-          >
-            Title:
-          </label>
-          <div
-            class="MuiInputBase-root MuiInput-root MuiInput-underline form-input w-[100%] md:w-[50%]"
-          >
-            <input
-              class="MuiInputBase-input MuiInput-input"
-              id="title"
-              name="title"
-              type="text"
-              value=""
-            />
-          </div>
-          <br />
-          <small
-            class="text-[#d9534f]"
-          />
-          <label
-            class="MuiFormLabel-root MuiInputLabel-root mt-4 mb-2 MuiInputLabel-animated"
-            id="bodyLabel"
-          >
-            Body:
-          </label>
-          <textarea
-            class="form-input w-[100%] md:w-[50%]"
-            id="body"
-            label="Body"
-            name="body"
-            rows="5"
-            style="height: -4px; overflow: hidden;"
-          />
-          <textarea
-            aria-hidden="true"
-            class="form-input w-[100%] md:w-[50%]"
-            readonly=""
-            style="visibility: hidden; position: absolute; overflow: hidden; height: 0px; top: 0px; left: 0px; transform: translateZ(0);"
-            tabindex="-1"
-          />
-          <br />
-          <small
-            class="text-[#d9534f]"
-          />
-          <br />
-          <div>
-            <button
-              class="hover:bg-[#67ade3] bg-[#3120E0] mb-4 mt-2 h-10 w-80 rounded-md text-white"
-              id="submitBtn"
-            >
-              Submit
-            </button>
-            <br />
-          </div>
-        </div>
-      </form>
-    </div>
-  </body>,
-  "container": <div>
-    <form
-      class="bg-white h-min mt-10"
-      id="addForm"
-      name="addForm"
-    >
-      <div
-        class="text-center m-2"
-      >
-        <br />
-        <label
-          class="MuiFormLabel-root MuiInputLabel-root m-2 MuiInputLabel-animated"
-          id="titleLabel"
-        >
-          Title:
-        </label>
-        <div
-          class="MuiInputBase-root MuiInput-root MuiInput-underline form-input w-[100%] md:w-[50%]"
-        >
-          <input
-            class="MuiInputBase-input MuiInput-input"
-            id="title"
-            name="title"
-            type="text"
-            value=""
-          />
-        </div>
-        <br />
-        <small
-          class="text-[#d9534f]"
-        />
-        <label
-          class="MuiFormLabel-root MuiInputLabel-root mt-4 mb-2 MuiInputLabel-animated"
-          id="bodyLabel"
-        >
-          Body:
-        </label>
-        <textarea
-          class="form-input w-[100%] md:w-[50%]"
-          id="body"
-          label="Body"
-          name="body"
-          rows="5"
-          style="height: -4px; overflow: hidden;"
-        />
-        <textarea
-          aria-hidden="true"
-          class="form-input w-[100%] md:w-[50%]"
-          readonly=""
-          style="visibility: hidden; position: absolute; overflow: hidden; height: 0px; top: 0px; left: 0px; transform: translateZ(0);"
-          tabindex="-1"
-        />
-        <br />
-        <small
-          class="text-[#d9534f]"
-        />
-        <br />
-        <div>
-          <button
-            class="hover:bg-[#67ade3] bg-[#3120E0] mb-4 mt-2 h-10 w-80 rounded-md text-white"
-            id="submitBtn"
-          >
-            Submit
-          </button>
-          <br />
-        </div>
-      </div>
-    </form>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
-`;
-
 exports[`Test PostForm component should render 'update' view mode 1`] = `
 Object {
   "asFragment": [Function],
@@ -204,6 +7,7 @@ Object {
     <div>
       <form
         class="bg-white h-min mt-10"
+        data-testid="updateForm"
         id="updateForm"
         name="updateForm"
       >
@@ -219,6 +23,7 @@ Object {
           </label>
           <div
             class="MuiInputBase-root MuiInput-root MuiInput-underline form-input w-[100%] md:w-[50%]"
+            data-testid="title"
           >
             <input
               class="MuiInputBase-input MuiInput-input"
@@ -240,6 +45,7 @@ Object {
           </label>
           <textarea
             class="form-input w-[100%] md:w-[50%]"
+            data-testid="body"
             id="body"
             label="Body"
             name="body"
@@ -261,6 +67,7 @@ Object {
           <div>
             <button
               class="hover:bg-[#67ade3] bg-[#3120E0] mb-4 mt-2 h-10 w-80 rounded-md text-white"
+              data-testid="submitBtn"
               id="submitBtn"
             >
               Submit
@@ -269,6 +76,7 @@ Object {
           </div>
           <button
             class="hover:bg-[#e08683] bg-[#d9534f] mb-4 mt-2 h-10 w-80 rounded-md text-white"
+            data-testid="deleteBtn"
             id="deleteBtn"
           >
             Delete
@@ -280,6 +88,7 @@ Object {
   "container": <div>
     <form
       class="bg-white h-min mt-10"
+      data-testid="updateForm"
       id="updateForm"
       name="updateForm"
     >
@@ -295,6 +104,7 @@ Object {
         </label>
         <div
           class="MuiInputBase-root MuiInput-root MuiInput-underline form-input w-[100%] md:w-[50%]"
+          data-testid="title"
         >
           <input
             class="MuiInputBase-input MuiInput-input"
@@ -316,6 +126,7 @@ Object {
         </label>
         <textarea
           class="form-input w-[100%] md:w-[50%]"
+          data-testid="body"
           id="body"
           label="Body"
           name="body"
@@ -337,6 +148,7 @@ Object {
         <div>
           <button
             class="hover:bg-[#67ade3] bg-[#3120E0] mb-4 mt-2 h-10 w-80 rounded-md text-white"
+            data-testid="submitBtn"
             id="submitBtn"
           >
             Submit
@@ -345,6 +157,7 @@ Object {
         </div>
         <button
           class="hover:bg-[#e08683] bg-[#d9534f] mb-4 mt-2 h-10 w-80 rounded-md text-white"
+          data-testid="deleteBtn"
           id="deleteBtn"
         >
           Delete

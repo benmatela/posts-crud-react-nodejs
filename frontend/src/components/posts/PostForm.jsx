@@ -58,6 +58,7 @@ export const PostForm = (props) => {
   return (
     <form
       id={props.mode + "Form"}
+      data-testid={props.mode + "Form"}
       name={props.mode + "Form"}
       className="bg-white h-min mt-10"
     >
@@ -69,6 +70,7 @@ export const PostForm = (props) => {
         </InputLabel>
         <Input
           id="title"
+          data-testid={"title"}
           className="form-input w-[100%] md:w-[50%]"
           defaultValue={selectedPost?.title}
           {...register("title", { required: true })}
@@ -83,6 +85,7 @@ export const PostForm = (props) => {
         </InputLabel>
         <TextareaAutosize
           id="body"
+          data-testid={"body"}
           className="form-input w-[100%] md:w-[50%]"
           defaultValue={selectedPost?.body}
           label={"Body"}
@@ -100,6 +103,7 @@ export const PostForm = (props) => {
         {props.submitting ? (
           <h1
             id="submitLoader"
+            data-testid={"submitLoader"}
             className="text-center loader text-[#28a745] font-bold"
           >
             {props.loaderSubmitMessage}
@@ -108,6 +112,7 @@ export const PostForm = (props) => {
           <div>
             <PrimaryButton
               id={"submitBtn"}
+              data-testid={"submitBtn"}
               label={"Submit"}
               className="hover:bg-[#67ade3] bg-[#3120E0] mb-4 mt-2 h-10 w-80 rounded-md text-white"
               onClick={(event) => handleSubmit(handleSubmitClick(event))}
@@ -120,6 +125,7 @@ export const PostForm = (props) => {
           !props.deleting ? (
             <PrimaryButton
               id="deleteBtn"
+              data-testid={"deleteBtn"}
               label={"Delete"}
               className="hover:bg-[#e08683] bg-[#d9534f] mb-4 mt-2 h-10 w-80 rounded-md text-white"
               onClick={(event) => handleDeletePostClick(event)}
@@ -128,6 +134,7 @@ export const PostForm = (props) => {
           ) : (
             <h1
               id="deleteLoader"
+              data-testid={"deleteLoader"}
               className="text-center text-[#d9534f] loader font-bold"
             >
               {props.loaderDeleteMessage}

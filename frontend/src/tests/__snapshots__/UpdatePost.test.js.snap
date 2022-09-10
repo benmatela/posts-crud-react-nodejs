@@ -10,12 +10,14 @@ Object {
       >
         <h1
           class="text-center text-gray-600 text-3xl font-bold"
+          data-testid="pageHeader"
           id="pageHeader"
         >
           Update Post
         </h1>
         <form
           class="bg-white h-min mt-10"
+          data-testid="updateForm"
           id="updateForm"
           name="updateForm"
         >
@@ -31,6 +33,7 @@ Object {
             </label>
             <div
               class="MuiInputBase-root MuiInput-root MuiInput-underline form-input w-[100%] md:w-[50%]"
+              data-testid="title"
             >
               <input
                 class="MuiInputBase-input MuiInput-input"
@@ -52,6 +55,7 @@ Object {
             </label>
             <textarea
               class="form-input w-[100%] md:w-[50%]"
+              data-testid="body"
               id="body"
               label="Body"
               name="body"
@@ -73,6 +77,7 @@ Object {
             <div>
               <button
                 class="hover:bg-[#67ade3] bg-[#3120E0] mb-4 mt-2 h-10 w-80 rounded-md text-white"
+                data-testid="submitBtn"
                 disabled=""
                 id="submitBtn"
               >
@@ -82,6 +87,7 @@ Object {
             </div>
             <button
               class="hover:bg-[#e08683] bg-[#d9534f] mb-4 mt-2 h-10 w-80 rounded-md text-white"
+              data-testid="deleteBtn"
               disabled=""
               id="deleteBtn"
             >
@@ -98,12 +104,14 @@ Object {
     >
       <h1
         class="text-center text-gray-600 text-3xl font-bold"
+        data-testid="pageHeader"
         id="pageHeader"
       >
         Update Post
       </h1>
       <form
         class="bg-white h-min mt-10"
+        data-testid="updateForm"
         id="updateForm"
         name="updateForm"
       >
@@ -119,6 +127,7 @@ Object {
           </label>
           <div
             class="MuiInputBase-root MuiInput-root MuiInput-underline form-input w-[100%] md:w-[50%]"
+            data-testid="title"
           >
             <input
               class="MuiInputBase-input MuiInput-input"
@@ -140,6 +149,7 @@ Object {
           </label>
           <textarea
             class="form-input w-[100%] md:w-[50%]"
+            data-testid="body"
             id="body"
             label="Body"
             name="body"
@@ -161,6 +171,7 @@ Object {
           <div>
             <button
               class="hover:bg-[#67ade3] bg-[#3120E0] mb-4 mt-2 h-10 w-80 rounded-md text-white"
+              data-testid="submitBtn"
               disabled=""
               id="submitBtn"
             >
@@ -170,6 +181,7 @@ Object {
           </div>
           <button
             class="hover:bg-[#e08683] bg-[#d9534f] mb-4 mt-2 h-10 w-80 rounded-md text-white"
+            data-testid="deleteBtn"
             disabled=""
             id="deleteBtn"
           >
