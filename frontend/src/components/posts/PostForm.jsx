@@ -60,7 +60,7 @@ export const PostForm = (props) => {
       name={props.mode + "Form"}
       className="bg-white h-min mt-10"
     >
-      <div className="text-center">
+      <div className="text-center m-2">
         <br />
         {/*  FORM FIELDS */}
         <InputLabel id="titleLabel" className="m-2">
@@ -97,7 +97,12 @@ export const PostForm = (props) => {
 
         {/*  BUTTONS */}
         {props.submitting ? (
-          <h1 className="text-center text-[#28a745] font-bold">Saving...</h1>
+          <h1
+            id="submitLoader"
+            className="text-center loader text-[#28a745] font-bold"
+          >
+            {props.loaderSubmitMessage}
+          </h1>
         ) : (
           <div>
             <PrimaryButton
@@ -120,8 +125,11 @@ export const PostForm = (props) => {
               disabled={props.submitting || !modelValid()}
             />
           ) : (
-            <h1 className="text-center text-[#d9534f] font-bold">
-              Deleting...
+            <h1
+              id="deleteLoader"
+              className="text-center text-[#d9534f] loader font-bold"
+            >
+              {props.loaderDeleteMessage}
             </h1>
           )
         ) : null}

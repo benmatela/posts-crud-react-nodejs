@@ -9,7 +9,7 @@ export const Posts = () => {
   const [posts, setPosts] = useState([]);
   const [postsStorage, setPostsStorage] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const searchPlaceholder = "Search Posts";
+  const searchPlaceholder = "Search Posts by title";
 
   useEffect(() => {
     getPosts()
@@ -58,8 +58,11 @@ export const Posts = () => {
   };
 
   return (
-    <div className="w-full bg-white h-[600px] mb-3">
-      <h1 className="text-center text-3xl font-bold" id="pageHeader">
+    <div className="w-full h-[600px] mb-3">
+      <h1
+        className="text-center text-3xl text-gray-600 font-bold"
+        id="pageHeader"
+      >
         {`Posts (${posts.length})`}
       </h1>
       {isLoading ? (

@@ -12,6 +12,8 @@ export const UpdatePost = () => {
   const [deleting, setDeleting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [loaderSubmitMessage, setLoaderSubmitMessage] = useState("");
+  const [loaderDeleteMessage, setLoaderDeleteMessage] = useState("");
   const [selectedPost] = useState({
     selected: new PostModel(
       state?.selected.userId || 0,
@@ -26,15 +28,21 @@ export const UpdatePost = () => {
    * @param {*} data
    */
   const handleSubmitClick = async (data) => {
+    setLoaderSubmitMessage("Updating item...");
+    setLoaderDeleteMessage("");
     setSubmitting(true);
     setSuccessMessage("");
     setErrorMessage("");
     const updated = await updatePost(data);
     if (updated.status === 200) {
-      setSuccessMessage(`Post updated.`);
+      setSuccessMessage(`Post successfully updated. ID: ${data.id}.`);
     } else {
-      setErrorMessage("Error while updating a post.");
+      setErrorMessage(
+        `Error while attempting to update a post. ID: ${data.id}.`
+      );
     }
+    setLoaderDeleteMessage("");
+    setLoaderSubmitMessage("");
     setSubmitting(false);
   };
 
@@ -43,17 +51,36 @@ export const UpdatePost = () => {
    * @param {*} data
    */
   const handleDeletePostClick = async (data) => {
+    setLoaderSubmitMessage("");
+    setLoaderDeleteMessage("Deleting item...");
     setDeleting(true);
     setSuccessMessage("");
     setErrorMessage("");
-    await deletePostById(data.id);
+    const deleted = await deletePostById(data.id);
+    if (deleted.status === 200) {
+      setSuccessMessage(`Post successfully deleted. You will be redirected..`);
+      setLoaderDeleteMessage("");
+      setLoaderSubmitMessage("");
+      setTimeout(() => {
+        navigate("/posts");
+        setDeleting(false);
+      }, 2000);
+    } else {
+      setErrorMessage(
+        `Error while attempting to delete a post. ID: ${data.id}`
+      );
+      setLoaderDeleteMessage("");
+      setLoaderSubmitMessage("");
+    }
     setDeleting(false);
-    navigate("/posts");
   };
 
   return (
-    <div className="w-full bg-white h-[600px]">
-      <h1 className="text-center text-3xl font-bold" id="pageHeader">
+    <div className="w-full h-[600px]">
+      <h1
+        className="text-center text-gray-600 text-3xl font-bold"
+        id="pageHeader"
+      >
         Update Post
       </h1>
       <PostForm
@@ -65,6 +92,8 @@ export const UpdatePost = () => {
         deleting={deleting}
         successMessage={successMessage}
         errorMessage={errorMessage}
+        loaderSubmitMessage={loaderSubmitMessage}
+        loaderDeleteMessage={loaderDeleteMessage}
       />
     </div>
   );

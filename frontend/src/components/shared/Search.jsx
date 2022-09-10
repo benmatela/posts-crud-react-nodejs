@@ -13,7 +13,7 @@ export const Search = (props) => {
     <div className="w-full mx-auto text-center">
         <Input
           id="searchBar"
-          className="form-input text-center w-[100%] md:w-[50%]"
+          className="form-input w-[100%] md:w-[50%]"
           placeholder={props.searchPlaceholder}
           onKeyUp={event => handleSubmit(onSearch(event))}
           {...register("searchItem", { required: false })}

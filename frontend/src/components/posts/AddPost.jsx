@@ -8,6 +8,7 @@ export const AddPost = () => {
   const [submitting, setSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const loaderSubmitMessage = "Adding new item...";
 
   /**
    * Handle PostForm 'submit' event and return data
@@ -27,10 +28,10 @@ export const AddPost = () => {
   };
 
   return (
-    <div className="w-full bg-white h-[600px]">
+    <div className="w-full h-[600px]">
       <h1
         data-testid={"pageHeader"}
-        className="text-center text-3xl font-bold"
+        className="text-center text-gray-600 text-3xl font-bold"
         id="pageHeader"
       >
         Add Post
@@ -42,6 +43,7 @@ export const AddPost = () => {
         selectedPost={selectedPost}
         successMessage={successMessage}
         errorMessage={errorMessage}
+        loaderSubmitMessage={loaderSubmitMessage}
       />
     </div>
   );
