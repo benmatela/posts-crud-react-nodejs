@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const postService = require("../services/post");
 const logging = require("../utils/logging");
-const appconfig = require("../utils/appconfig");
 
 const NAMESPACE = "Post Routes";
 

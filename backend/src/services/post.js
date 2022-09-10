@@ -1,5 +1,4 @@
 const logging = require("../utils/logging");
-const appconfig = require("../utils/appconfig");
 const axios = require("axios");
 
 const NAMESPACE = "Post Service";
@@ -30,6 +29,7 @@ const getById = async (id) => {
 const update = async (post) => {
   logging.info(NAMESPACE, "posts() called.");
   try {
+    logging.info(NAMESPACE, post);
     const updated = await axios.put(`${apiURL}/${post.id}`, post);
     return updated;
   } catch (error) {

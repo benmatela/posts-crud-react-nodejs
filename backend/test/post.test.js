@@ -54,7 +54,7 @@ describe("Post", () => {
 
   describe("UPDATE post", () => {
     it("should update a post", (done) => {
-      const updatedPost = new PostModel(0, 0, "Test", "This is a test");
+      const updatedPost = new PostModel(1, 1, "Test", "This is a test");
       request(app)
         .put("/api/v1/posts")
         .send(updatedPost)
