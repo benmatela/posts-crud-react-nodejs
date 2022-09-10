@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render } from "@testing-library/react";
+import { cleanup, screen, render } from "@testing-library/react";
 import { AddPost } from "../components/posts/AddPost";
 
 afterEach(cleanup);
@@ -11,10 +11,7 @@ describe("Test AddPost component", () => {
 
     expect(view).toMatchSnapshot();
 
-    const deleteBtn = document.getElementById("deleteBtn");
-    expect(deleteBtn).not.toBeTruthy();
-
-    const submitBtn = document.getElementById("submitBtn");
+    const submitBtn = screen.getByTestId("submitBtn");
     expect(submitBtn).toBeTruthy();
   });
 });
