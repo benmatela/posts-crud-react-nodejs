@@ -23,7 +23,7 @@ export const UpdatePost = () => {
   // Redirect to Posts if no value in 'state'
 
   /**
-   * Handle PostForm 'submit' event and return data
+   * Handles PostForm 'submitBtn' click event
    * @param {*} data
    */
   const handleSubmitClick = async (data) => {
@@ -47,7 +47,7 @@ export const UpdatePost = () => {
   };
 
   /**
-   * Handle PostForm 'delete' event and return data
+   * Handle PostForm 'deleteBtn' click event
    * @param {*} data
    */
   const handleDeletePostClick = async (data) => {

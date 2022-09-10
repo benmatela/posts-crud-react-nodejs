@@ -9,9 +9,11 @@ const className = "text-white";
 
 describe("Test PrimaryButton component", () => {
   it("should render", () => {
-    render(<PrimaryButton id={id} label={label} className={className} />);
+    const component = render(<PrimaryButton id={id} label={label} className={className} />);
 
-    expect(document.getElementById("testBtn").innerHTML).toEqual("Test");
+    expect(component).toMatchSnapshot();
+
+    expect(document.getElementById("testBtn").innerHTML).toEqual(label);
 
     expect(document.getElementById("testBtn").classList.contains("text-white"));
   });
