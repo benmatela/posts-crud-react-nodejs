@@ -5,95 +5,127 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <p
-        class="py-1 cursor-pointer hover:bg-[#e3e1d2] my-1 justify-evenly bg-[#F0EABE] text-[#000300] w-[100%] md:grid md:grid-cols-2 post-item rounded-md font-medium"
+      <div
+        class="py-1 cursor-pointer hover:bg-[#e3e1d2] bg-[#F0EABE] text-gray-600 w-[100%] mb-1 post-item rounded-md shadow-lg font-medium"
         id="1"
       >
-        <span
-          class="m-2"
-          id="title1"
+        <div
+          class="px-6 py-4 m-2"
         >
-          (
-          1
-          ). 
-          sunt aut facere repellat provident occaecati excepturi optio reprehenderit
-        </span>
-        <span
-          class="text-gray-600 m-2 hidden md:flex"
+          <div
+            class="font-bold text-l"
+          >
+            <span
+              class="m-2"
+              id="title1"
+            >
+              (
+              1
+              ). 
+              sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+            </span>
+          </div>
+          <p
+            class="m-2 hidden md:flex"
+            id="body1"
+          >
+            quia et suscipit
+suscipit recusandae consequuntur expedita et cum
+reprehenderit mo...
+          </p>
+        </div>
+      </div>
+      <div
+        class="py-1 cursor-pointer hover:bg-[#e3e1d2] bg-[#F0EABE] text-gray-600 w-[100%] mb-1 post-item rounded-md shadow-lg font-medium"
+        id="2"
+      >
+        <div
+          class="px-6 py-4 m-2"
+        >
+          <div
+            class="font-bold text-l"
+          >
+            <span
+              class="m-2"
+              id="title2"
+            >
+              (
+              2
+              ). 
+              qui est esse
+            </span>
+          </div>
+          <p
+            class="m-2 hidden md:flex"
+            id="body2"
+          >
+            est rerum tempore vitae
+sequi sint nihil reprehenderit dolor beatae ea dolores neq...
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="py-1 cursor-pointer hover:bg-[#e3e1d2] bg-[#F0EABE] text-gray-600 w-[100%] mb-1 post-item rounded-md shadow-lg font-medium"
+      id="1"
+    >
+      <div
+        class="px-6 py-4 m-2"
+      >
+        <div
+          class="font-bold text-l"
+        >
+          <span
+            class="m-2"
+            id="title1"
+          >
+            (
+            1
+            ). 
+            sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+          </span>
+        </div>
+        <p
+          class="m-2 hidden md:flex"
           id="body1"
         >
           quia et suscipit
 suscipit recusandae consequuntur expedita et cum
 reprehenderit mo...
-        </span>
-      </p>
-      <p
-        class="py-1 cursor-pointer hover:bg-[#e3e1d2] my-1 justify-evenly bg-[#F0EABE] text-[#000300] w-[100%] md:grid md:grid-cols-2 post-item rounded-md font-medium"
-        id="2"
+        </p>
+      </div>
+    </div>
+    <div
+      class="py-1 cursor-pointer hover:bg-[#e3e1d2] bg-[#F0EABE] text-gray-600 w-[100%] mb-1 post-item rounded-md shadow-lg font-medium"
+      id="2"
+    >
+      <div
+        class="px-6 py-4 m-2"
       >
-        <span
-          class="m-2"
-          id="title2"
+        <div
+          class="font-bold text-l"
         >
-          (
-          2
-          ). 
-          qui est esse
-        </span>
-        <span
-          class="text-gray-600 m-2 hidden md:flex"
+          <span
+            class="m-2"
+            id="title2"
+          >
+            (
+            2
+            ). 
+            qui est esse
+          </span>
+        </div>
+        <p
+          class="m-2 hidden md:flex"
           id="body2"
         >
           est rerum tempore vitae
 sequi sint nihil reprehenderit dolor beatae ea dolores neq...
-        </span>
-      </p>
+        </p>
+      </div>
     </div>
-  </body>,
-  "container": <div>
-    <p
-      class="py-1 cursor-pointer hover:bg-[#e3e1d2] my-1 justify-evenly bg-[#F0EABE] text-[#000300] w-[100%] md:grid md:grid-cols-2 post-item rounded-md font-medium"
-      id="1"
-    >
-      <span
-        class="m-2"
-        id="title1"
-      >
-        (
-        1
-        ). 
-        sunt aut facere repellat provident occaecati excepturi optio reprehenderit
-      </span>
-      <span
-        class="text-gray-600 m-2 hidden md:flex"
-        id="body1"
-      >
-        quia et suscipit
-suscipit recusandae consequuntur expedita et cum
-reprehenderit mo...
-      </span>
-    </p>
-    <p
-      class="py-1 cursor-pointer hover:bg-[#e3e1d2] my-1 justify-evenly bg-[#F0EABE] text-[#000300] w-[100%] md:grid md:grid-cols-2 post-item rounded-md font-medium"
-      id="2"
-    >
-      <span
-        class="m-2"
-        id="title2"
-      >
-        (
-        2
-        ). 
-        qui est esse
-      </span>
-      <span
-        class="text-gray-600 m-2 hidden md:flex"
-        id="body2"
-      >
-        est rerum tempore vitae
-sequi sint nihil reprehenderit dolor beatae ea dolores neq...
-      </span>
-    </p>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

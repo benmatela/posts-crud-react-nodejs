@@ -5,14 +5,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### How it works:
 
 
-* Performs CRUD operations
-* Shows a list of Posts
-* To edit/remove a Post, simply click on a post from the list.
+* This app performs basic CRUD operations
+* When the app loads it renders a list of Posts
+* To edit/remove a Post, simply click on it from the list.
 
 
 # Pre-requisites
 - Install [Node.js](https://nodejs.org/en/) v16.13.1
-- `/backend` should be running. See the README file inside.
+- `/backend` API should be running. See the README file inside the folder to learn how to run it.
 
 ## Available Scripts
 
@@ -27,7 +27,7 @@ Installs dependencies.
 Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### `npm test – –coverage a`
+### `npm test ––coverage a`
 
 Launches the test runner in the interactive watch mode.
 
