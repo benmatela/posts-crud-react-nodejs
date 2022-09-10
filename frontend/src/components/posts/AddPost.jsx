@@ -10,7 +10,7 @@ export const AddPost = () => {
   const [submitting, setSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const loaderSubmitMessage = "Adding new item...";
+  const loaderSubmitMessage = "Adding new post...";
 
   /**
    * Handle PostForm 'submit' event and return data
@@ -22,10 +22,10 @@ export const AddPost = () => {
     setErrorMessage("");
     const newPost = await addPost(data);
     if (newPost.status === 200) {
-      setSuccessMessage(`Post Created with ID: ${newPost.data.id}.`);
+      setSuccessMessage(`Created post with ID ${newPost.data.id}.`);
       // Clear form
     } else {
-      setErrorMessage("Error while creating a post.");
+      setErrorMessage("Error while attempting to create post.");
     }
     setSubmitting(false);
   };

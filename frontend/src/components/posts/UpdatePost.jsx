@@ -18,6 +18,8 @@ export const UpdatePost = () => {
   const [loaderSubmitMessage, setLoaderSubmitMessage] = useState("");
   const [loaderDeleteMessage, setLoaderDeleteMessage] = useState("");
 
+  // Redirect to Posts if no value in 'state'
+
   /**
    * Handle PostForm 'submit' event and return data
    * @param {*} data
@@ -30,10 +32,10 @@ export const UpdatePost = () => {
     setErrorMessage("");
     const updated = await updatePost(data);
     if (updated.status === 200) {
-      setSuccessMessage(`Post successfully updated. ID: ${data.id}.`);
+      setSuccessMessage(`Post with ID ${data.id} successfully updated.`);
     } else {
       setErrorMessage(
-        `Error while attempting to update a post. ID: ${data.id}.`
+        `Error while attempting to update post with ID ${data.id}.`
       );
     }
     setLoaderDeleteMessage("");
@@ -47,27 +49,27 @@ export const UpdatePost = () => {
    */
   const handleDeletePostClick = async (data) => {
     setLoaderSubmitMessage("");
-    setLoaderDeleteMessage("Deleting item...");
+    setLoaderDeleteMessage(`Deleting post with ID ${data.id}...`);
     setDeleting(true);
     setSuccessMessage("");
     setErrorMessage("");
     const deleted = await deletePostById(data.id);
     if (deleted.status === 200) {
-      setSuccessMessage(`Post successfully deleted. You will be redirected..`);
+      setSuccessMessage(`Successfully deleted post with ID ${data.id}. You will be redirected...`);
       setLoaderDeleteMessage("");
       setLoaderSubmitMessage("");
       setTimeout(() => {
         navigate("/posts");
         setDeleting(false);
-      }, 2000);
+      }, 3000);
     } else {
       setErrorMessage(
-        `Error while attempting to delete a post. ID: ${data.id}`
+        `Error while attempting to delete post with ID ${data.id}`
       );
       setLoaderDeleteMessage("");
       setLoaderSubmitMessage("");
+      setDeleting(false);
     }
-    setDeleting(false);
   };
 
   return (

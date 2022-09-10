@@ -8,21 +8,25 @@ export const PostItem = (props) => {
 
   return props.posts.map((post, i) => {
     return (
-      <p
+      <div
         id={post.id}
         onClick={(event) => handleClick(event)}
         key={i}
         className={
-          "py-1 cursor-pointer hover:bg-[#e3e1d2] my-1 justify-evenly bg-[#F0EABE] text-[#000300] w-[100%] md:grid md:grid-cols-2 post-item rounded-md font-medium"
+          "py-1 cursor-pointer hover:bg-[#e3e1d2] bg-[#F0EABE] text-gray-600 w-[100%] mb-1 post-item rounded-md shadow-lg font-medium"
         }
       >
-        <span id={"title" + post.id} className="m-2">
-          ({post.id}). {post.title}
-        </span>
-        <span id={"body" + post.id} className="text-gray-600 m-2 hidden md:flex">
-          {String(post.body).slice(0, 82) + "..."}
-        </span>
-      </p>
+        <div className="px-6 py-4 m-2">
+          <div className="font-bold text-l">
+            <span id={"title" + post.id} className="m-2">
+              ({post.id}). {post.title}
+            </span>
+          </div>
+          <p id={"body" + post.id} className="m-2 hidden md:flex">
+              {String(post.body).slice(0, 82) + "..."}
+          </p>
+        </div>
+      </div>
     );
   });
 };
