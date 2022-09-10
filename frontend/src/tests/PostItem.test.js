@@ -1,4 +1,4 @@
-import { cleanup, render, fireEvent } from "@testing-library/react";
+import { cleanup, render, fireEvent, screen } from "@testing-library/react";
 import { PostItem } from "../components/posts/PostItem";
 
 const dummyPosts = [
@@ -24,12 +24,6 @@ describe("Test PostItem component", () => {
     const view = render(<PostItem posts={dummyPosts} />);
 
     expect(view).toMatchSnapshot();
-
-    const title = `(${dummyPosts[0].id}). ${dummyPosts[0].title}`;
-    expect(document.getElementById(`title${dummyPosts[0].id}`).innerHTML).toEqual(title);
-
-    const posts = document.getElementsByClassName("post-item");
-    expect(posts).toHaveLength(2);
   });
 
   it("should click post item", () => {
@@ -39,7 +33,7 @@ describe("Test PostItem component", () => {
       <PostItem posts={dummyPosts} handlePostItemClick={handlePostItemClick} />
     );
 
-    const button = document.getElementById("1");
+    const button = screen.getByTestId("1");
     fireEvent.click(button);
 
     expect(handlePostItemClick).toBeCalled();

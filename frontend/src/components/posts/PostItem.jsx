@@ -10,6 +10,7 @@ export const PostItem = (props) => {
     return (
       <div
         id={post.id}
+        data-testid={post.id}
         onClick={(event) => handleClick(event)}
         key={i}
         className={
@@ -18,11 +19,11 @@ export const PostItem = (props) => {
       >
         <div className="px-6 py-4 m-2">
           <div className="font-bold text-l">
-            <span id={"title" + post.id} className="m-2">
+            <span id={"title" + post.id} data-testid={"title" + post.id} className="m-2">
               ({post.id}). {post.title}
             </span>
           </div>
-          <p id={"body" + post.id} className="m-2 hidden md:flex">
+          <p id={"body" + post.id} data-testid={"body" + post.id} className="m-2 hidden md:flex">
               {String(post.body).slice(0, 82) + "..."}
           </p>
         </div>
