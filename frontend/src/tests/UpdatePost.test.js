@@ -13,13 +13,13 @@ describe("Test AddPost component", () => {
     );
 
     expect(component).toMatchSnapshot();
-  });
 
-  it("should handle click 'submitBtn'", () => {
-    // click submit button
-  });
+    expect(document.getElementById("pageHeader").innerHTML).toEqual("Update Post"); 
 
-  it("should handle click 'deleteBtn'", () => {
-    // click delete button
+    const deleteBtn = document.getElementById("deleteBtn");
+    expect(deleteBtn).toBeTruthy();
+
+    const submitBtn = document.getElementById("submitBtn");
+    expect(submitBtn).toBeTruthy();
   });
 });

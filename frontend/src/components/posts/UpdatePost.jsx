@@ -8,11 +8,9 @@ import { PostForm } from "./PostForm";
 export const UpdatePost = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
-  const [selectedPost] = useState(
-    state || {
-      selected: new PostModel(0, 0, "", ""),
-    }
-  );
+  const [selectedPost] = useState(state || {
+    selected: new PostModel(0, 0, "", ""),
+  });
   const [submitting, setSubmitting] = useState(false);
   const [deleting, setDeleting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
