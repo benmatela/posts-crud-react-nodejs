@@ -21,9 +21,9 @@ afterEach(cleanup);
 
 describe("Test PostItem component", () => {
   it("should render", () => {
-    const component = render(<PostItem posts={dummyPosts} />);
+    const view = render(<PostItem posts={dummyPosts} />);
 
-    expect(component).toMatchSnapshot();
+    expect(view).toMatchSnapshot();
 
     const title = `(${dummyPosts[0].id}). ${dummyPosts[0].title}`;
     expect(document.getElementById(`title${dummyPosts[0].id}`).innerHTML).toEqual(title);

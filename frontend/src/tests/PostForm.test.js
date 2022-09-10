@@ -7,7 +7,7 @@ afterEach(cleanup);
 
 describe("Test PostForm component", () => {
   it("should render 'update' view mode", () => {
-    const component = render(
+    const view = render(
       <PostForm
         mode={"update"}
         selectedPost={new PostModel(0, 0, "", "")}
@@ -18,7 +18,7 @@ describe("Test PostForm component", () => {
       />
     );
 
-    expect(component).toMatchSnapshot();
+    expect(view).toMatchSnapshot();
 
     const deleteBtn = document.getElementById("deleteBtn");
     expect(deleteBtn).toBeTruthy();
@@ -31,7 +31,7 @@ describe("Test PostForm component", () => {
     const handleSubmitClick = jest.fn();
     const handleDeletePostClick = jest.fn();
 
-    const component = render(
+    const view = render(
       <BrowserRouter>
         <PostForm
           mode={"add"}
@@ -46,7 +46,7 @@ describe("Test PostForm component", () => {
       </BrowserRouter>
     );
 
-    expect(component).toMatchSnapshot();
+    expect(view).toMatchSnapshot();
   });
 
   it("should click 'submitBtn'", () => {

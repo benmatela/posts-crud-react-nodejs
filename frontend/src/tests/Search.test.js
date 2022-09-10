@@ -5,7 +5,9 @@ afterEach(cleanup);
 
 describe("Test Search component", () => {
   it("should render", () => {
-    render(<Search searchPlaceholder={"Search Posts"} />);
+    const view = render(<Search searchPlaceholder={"Search Posts"} />);
+
+    expect(view).toMatchSnapshot();
 
     expect(document.getElementById("searchBar")).toBeTruthy();
 

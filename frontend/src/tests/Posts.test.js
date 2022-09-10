@@ -6,12 +6,12 @@ afterEach(cleanup);
 
 describe("Test Posts component", () => {
   it("should render", async () => {
-    const component = render(
+    const view = render(
       <BrowserRouter>
         <Posts />
       </BrowserRouter>
     );
 
-    expect(component).toMatchSnapshot();
+    expect(view).toMatchSnapshot();
   });
 });

@@ -9,9 +9,9 @@ const className = "text-white";
 
 describe("Test PrimaryButton component", () => {
   it("should render", () => {
-    const component = render(<PrimaryButton id={id} label={label} className={className} />);
+    const view = render(<PrimaryButton id={id} label={label} className={className} />);
 
-    expect(component).toMatchSnapshot();
+    expect(view).toMatchSnapshot();
 
     expect(document.getElementById(id).innerHTML).toEqual(label);
 
