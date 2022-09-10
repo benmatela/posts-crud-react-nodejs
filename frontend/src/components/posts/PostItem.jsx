@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 
 export const PostItem = (props) => {
+  const [posts, setPosts] = useState([]);
+
   const handleClick = (event) => {
     const index = event.currentTarget.id;
     props.handlePostItemClick(index);
   };
+
+  useEffect(() => {
+    setPosts(props.posts);
+  });
 
   return props.posts.map((post, i) => {
     return (
@@ -18,13 +25,31 @@ export const PostItem = (props) => {
         }
       >
         <div className="px-6 py-4 m-2">
-          <div className="font-bold text-l">
-            <span id={"title" + post.id} data-testid={"title" + post.id} className="m-2">
+          <div
+            className={
+              posts.length <= 9 ? "font-bold text-xl" : "font-bold text-l"
+            }
+          >
+            <span
+              id={"title" + post.id}
+              data-testid={"title" + post.id}
+              className={posts.length <= 9 ? "m-2 text-xl" : "m-2"}
+            >
               ({post.id}). {post.title}
             </span>
           </div>
-          <p id={"body" + post.id} data-testid={"body" + post.id} className="m-2 hidden md:flex">
-              {String(post.body).slice(0, 82) + "..."}
+          <p
+            id={"body" + post.id}
+            data-testid={"body" + post.id}
+            className={
+              posts.length <= 9
+                ? "m-2 hidden md:flex text-xl"
+                : "m-2 hidden md:flex"
+            }
+          >
+            {posts.length <= 9
+              ? post.body
+              : String(post.body).slice(0, 82) + "..."}
           </p>
         </div>
       </div>
