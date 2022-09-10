@@ -21,12 +21,12 @@ afterEach(cleanup);
 
 describe("Test PostItem component", () => {
   it("should render", () => {
-    render(<PostItem posts={dummyPosts} />);
+    const component = render(<PostItem posts={dummyPosts} />);
+
+    expect(component).toMatchSnapshot();
 
     const title = `(${dummyPosts[0].id}). ${dummyPosts[0].title}`;
-    expect(document.getElementById("title1").innerHTML).toEqual(title);
-
-    expect(document.getElementById("body1").innerHTML).toEqual(dummyPosts[0].body);
+    expect(document.getElementById(`title${dummyPosts[0].id}`).innerHTML).toEqual(title);
 
     const posts = document.getElementsByClassName("post-item");
     expect(posts).toHaveLength(2);

@@ -7,7 +7,7 @@ afterEach(cleanup);
 
 describe("Test PostForm component", () => {
   it("should render 'update' mode", () => {
-    render(
+    const component = render(
       <PostForm
         mode={"update"}
         selectedPost={new PostModel(0, 0, "", "")}
@@ -18,16 +18,14 @@ describe("Test PostForm component", () => {
       />
     );
 
-    expect(document.getElementById("titleLabel").innerHTML).toEqual("Title:");
+    expect(component).toMatchSnapshot();
+
     expect(document.getElementById("title").value).toEqual("");
 
-    expect(document.getElementById("bodyLabel").innerHTML).toEqual("Body:");
     expect(document.getElementById("body").value).toEqual("");
 
-    expect(document.getElementById("submitBtn")).toBeTruthy();
     expect(document.getElementById("submitBtn").innerHTML).toEqual("Submit");
 
-    expect(document.getElementById("deleteBtn")).toBeTruthy();
     expect(document.getElementById("deleteBtn").innerHTML).toEqual("Delete");
   });
 

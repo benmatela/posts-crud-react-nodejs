@@ -6,8 +6,10 @@ afterEach(cleanup);
 
 describe("Test Header component", () => {
   it("should render", () => {
-    render(<BrowserRouter><Header /></BrowserRouter>);
+    const component = render(<BrowserRouter><Header /></BrowserRouter>);
 
+    expect(component).toMatchSnapshot();
+    
     expect(document.getElementsByClassName("link")).toHaveLength(2);
   });
 });

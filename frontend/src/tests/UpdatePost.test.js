@@ -6,22 +6,20 @@ afterEach(cleanup);
 
 describe("Test AddPost component", () => {
   it("should render", () => {
-    render(
+    const component = render(
       <BrowserRouter>
         <UpdatePost />
       </BrowserRouter>
     );
 
-    expect(document.getElementById("pageHeader").innerHTML).toEqual(
-      "Update Post"
-    );
+    expect(component).toMatchSnapshot();
+  });
 
-    expect(document.getElementById("title").value).toEqual("");
+  it("should handle click 'submitBtn'", () => {
+    // click submit button
+  });
 
-    expect(document.getElementById("body").value).toEqual("");
-
-    expect(document.getElementById("submitBtn").innerHTML).toEqual("Submit");
-
-    expect(document.getElementById("deleteBtn").innerHTML).toEqual("Delete");
+  it("should handle click 'deleteBtn'", () => {
+    // click delete button
   });
 });
