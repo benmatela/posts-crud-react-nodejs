@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 
 afterEach(cleanup);
 
-describe("Test AddPost component", () => {
+describe("Test UpdatePost component", () => {
   it("should render", () => {
     const component = render(
       <BrowserRouter>
