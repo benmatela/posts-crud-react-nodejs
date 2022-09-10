@@ -2,6 +2,7 @@ import axios from "axios";
 
 const postApiURL = "http://localhost:3001/api/v1/posts";
 
+// Add error handling
 export const getPosts = async () => {
   return await axios.get(postApiURL);
 };

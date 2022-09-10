@@ -1,36 +1,48 @@
-import { cleanup, render, fireEvent } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { PrimaryButton } from "../components/shared/PrimaryButton";
 
 afterEach(cleanup);
 
-const id = "testBtn";
-const label = "Test";
+const testId = "testBtn";
+const labelText = "Test";
 const className = "text-white";
 
 describe("Test PrimaryButton component", () => {
   it("should render", () => {
-    const view = render(<PrimaryButton id={id} label={label} className={className} />);
+    const view = render(
+      <PrimaryButton
+        id={testId}
+        label={labelText}
+        disabled={false}
+        className={className}
+      />
+    );
 
     expect(view).toMatchSnapshot();
 
-    expect(document.getElementById(id).innerHTML).toEqual(label);
+    expect(screen.getByTestId(testId).innerHTML).toEqual(labelText);
 
-    expect(document.getElementById(id).classList.contains(className));
+    expect(
+      screen.getByTestId(testId).classList.contains(className)
+    ).toBeTruthy();
   });
 
   it("should click 'testBtn'", () => {
     const onClick = jest.fn();
 
-    render(
+    const view = render(
       <PrimaryButton
-        id={id}
-        label={label}
+        id={testId}
+        label={labelText}
+        disabled={false}
         className={className}
         onClick={onClick}
       />
     );
 
-    const button = document.getElementById(id);
+    expect(view).toMatchSnapshot();
+
+    const button = screen.getByTestId(testId);
     fireEvent.click(button);
 
     expect(onClick).toBeCalled();
