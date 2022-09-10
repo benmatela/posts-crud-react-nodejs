@@ -36,7 +36,7 @@ Installs dependencies.
 
 Runs the app in the development mode.\
 Endpoint example: [http://localhost:3001/posts](http://localhost:3001/posts)\
-Swagger Endpoint: [http://localhost:3001/api-docs/#/](http://localhost:3001/api-docs/#/)
+For more info on our endpoints: [http://localhost:3001/api-docs/#/](http://localhost:3001/api-docs/#/)
 
 ### `npm test`
 
