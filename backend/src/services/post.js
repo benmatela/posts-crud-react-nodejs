@@ -8,7 +8,7 @@ const apiURL = process.env.JSON_PLACEHOLDER_API_URL;
 
 const getPosts = async () => {
   // Add pagination
-  logging.info(NAMESPACE, "getPosts() called.");
+  logging.info(NAMESPACE, "posts() called.");
   try {
     return await axios.get(apiURL);
   } catch (error) {
@@ -18,7 +18,7 @@ const getPosts = async () => {
 };
 
 const getById = async (id) => {
-  logging.info(NAMESPACE, "getPosts() called.");
+  logging.info(NAMESPACE, "posts():id called.");
   try {
     return await axios.get(`${apiURL}/${id}`);
   } catch (error) {
@@ -28,7 +28,7 @@ const getById = async (id) => {
 };
 
 const update = async (post) => {
-  logging.info(NAMESPACE, "update() called.");
+  logging.info(NAMESPACE, "posts() called.");
   try {
     const updated = await axios.put(`${apiURL}/${post.id}`, post);
     return updated;
@@ -39,7 +39,7 @@ const update = async (post) => {
 };
 
 const add = async (post) => {
-  logging.info(NAMESPACE, "add() called.");
+  logging.info(NAMESPACE, "posts() called.");
   try {
     return await axios.post(apiURL, post);
   } catch (error) {
@@ -49,7 +49,7 @@ const add = async (post) => {
 };
 
 const remove = async (id) => {
-  logging.info(NAMESPACE, "remove() called.");
+  logging.info(NAMESPACE, "posts():id called.");
   try {
     return await axios.delete(`${apiURL}/${id}`);
   } catch (error) {
