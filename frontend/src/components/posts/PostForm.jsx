@@ -23,18 +23,18 @@ export const PostForm = (props) => {
     );
   };
 
-  const handleSubmitClick = async (event) => {
+  const handleSubmitClick = (event) => {
     event.preventDefault();
     props.handleSubmitClick(selectedPost);
   };
 
-  const handleDeletePostClick = async (event) => {
+  const handleDeletePostClick = (event) => {
     // 'Yes/No' confirmation before 'handleDeletePostClick' is fired
     event.preventDefault();
     props.handleDeletePostClick(selectedPost);
   };
 
-  const handleTitleInpuChange = async (event) => {
+  const handleTitleInpuChange = (event) => {
     const post = new PostModel(
       selectedPost.userId,
       selectedPost.id,
@@ -44,7 +44,7 @@ export const PostForm = (props) => {
     setSelectedPost(post);
   };
 
-  const handleBodyInputChange = async (event) => {
+  const handleBodyInputChange = (event) => {
     const post = new PostModel(
       selectedPost.userId,
       selectedPost.id,
