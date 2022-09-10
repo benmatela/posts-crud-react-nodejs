@@ -8,19 +8,21 @@ export const Posts = () => {
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
   const [postsStorage, setPostsStorage] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  const searchPlaceholder = "Search Posts by title";
+  const searchPlaceholder = "Search posts by title";
 
   useEffect(() => {
     getPosts()
       .catch((error) => {
-        // show error message on screen
+        setErrorMessage("Error while attempting to get posts...");
         setIsLoading(false);
       })
       .then((res) => {
         setPosts(res.data);
         setPostsStorage(res.data);
         setIsLoading(false);
+        setErrorMessage("");
       });
   }, []);
 
@@ -74,12 +76,24 @@ export const Posts = () => {
         </h1>
       ) : (
         <div className="m-3">
-          <Search
-            handleSearchClick={handleSearchClick}
-            searchPlaceholder={searchPlaceholder}
-          />
+          <div hidden={errorMessage.length > 0}>
+            <Search
+              handleSearchClick={handleSearchClick}
+              searchPlaceholder={searchPlaceholder}
+            />
+          </div>
           <div className="m-3"></div>
-          <div className="overflow-y-scroll h-[700px] md:grid md:grid-cols-4" id="postItems">
+
+          {errorMessage.length > 0 ? (
+            <h1 className="text-center text-[#dc3545] font-bold">
+              {errorMessage}
+            </h1>
+          ) : null}
+
+          <div
+            className="overflow-y-scroll h-[700px] md:grid md:grid-cols-4"
+            id="postItems"
+          >
             <PostItem handlePostItemClick={handlePostItemClick} posts={posts} />
           </div>
         </div>

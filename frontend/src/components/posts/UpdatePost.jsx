@@ -8,9 +8,11 @@ import { PostForm } from "./PostForm";
 export const UpdatePost = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
-  const [selectedPost] = useState(state || {
-    selected: new PostModel(0, 0, "", ""),
-  });
+  const [selectedPost] = useState(
+    state || {
+      selected: new PostModel(0, 0, "", ""),
+    }
+  );
   const [submitting, setSubmitting] = useState(false);
   const [deleting, setDeleting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
@@ -30,6 +32,7 @@ export const UpdatePost = () => {
     setSubmitting(true);
     setSuccessMessage("");
     setErrorMessage("");
+
     const updated = await updatePost(data);
     if (updated.status === 200) {
       setSuccessMessage(`Post with ID ${data.id} successfully updated.`);
@@ -53,9 +56,12 @@ export const UpdatePost = () => {
     setDeleting(true);
     setSuccessMessage("");
     setErrorMessage("");
+
     const deleted = await deletePostById(data.id);
     if (deleted.status === 200) {
-      setSuccessMessage(`Successfully deleted post with ID ${data.id}. You will be redirected...`);
+      setSuccessMessage(
+        `Successfully deleted post with ID ${data.id}. You will be redirected...`
+      );
       setLoaderDeleteMessage("");
       setLoaderSubmitMessage("");
       setTimeout(() => {
