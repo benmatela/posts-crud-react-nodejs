@@ -14,10 +14,6 @@ describe("Test UpdatePost component", () => {
 
     expect(component).toMatchSnapshot();
 
-    expect(document.getElementById("pageHeader").innerHTML).toEqual(
-      "Update Post"
-    );
-
     const deleteBtn = document.getElementById("deleteBtn");
     expect(deleteBtn).toBeTruthy();
 

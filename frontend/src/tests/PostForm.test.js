@@ -6,7 +6,7 @@ import { PostForm } from "../components/posts/PostForm";
 afterEach(cleanup);
 
 describe("Test PostForm component", () => {
-  it("should render 'update' mode", () => {
+  it("should render 'update' view mode", () => {
     const component = render(
       <PostForm
         mode={"update"}
@@ -20,20 +20,18 @@ describe("Test PostForm component", () => {
 
     expect(component).toMatchSnapshot();
 
-    expect(document.getElementById("title").value).toEqual("");
+    const deleteBtn = document.getElementById("deleteBtn");
+    expect(deleteBtn).toBeTruthy();
 
-    expect(document.getElementById("body").value).toEqual("");
-
-    expect(document.getElementById("submitBtn").innerHTML).toEqual("Submit");
-
-    expect(document.getElementById("deleteBtn").innerHTML).toEqual("Delete");
+    const submitBtn = document.getElementById("submitBtn");
+    expect(submitBtn).toBeTruthy();
   });
 
-  it("should render 'add' mode", () => {
+  it("should render 'add' view mode", () => {
     const handleSubmitClick = jest.fn();
     const handleDeletePostClick = jest.fn();
 
-    render(
+    const component = render(
       <BrowserRouter>
         <PostForm
           mode={"add"}
@@ -48,16 +46,7 @@ describe("Test PostForm component", () => {
       </BrowserRouter>
     );
 
-    expect(document.getElementById("titleLabel").innerHTML).toEqual("Title:");
-    expect(document.getElementById("title").value).toEqual("");
-
-    expect(document.getElementById("bodyLabel").innerHTML).toEqual("Body:");
-    expect(document.getElementById("body").value).toEqual("");
-
-    expect(document.getElementById("submitBtn")).toBeTruthy();
-    expect(document.getElementById("submitBtn").innerHTML).toEqual("Submit");
-
-    expect(document.getElementById("deleteBtn")).not.toBeTruthy();
+    expect(component).toMatchSnapshot();
   });
 
   it("should click 'submitBtn'", () => {
