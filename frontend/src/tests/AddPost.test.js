@@ -3,9 +3,11 @@ import { AddPost } from "../components/posts/AddPost";
 
 afterEach(cleanup);
 
+const mode = "add";
+
 describe("Test AddPost component", () => {
   it("should render", () => {
-    const component = render(<AddPost mode={"add"} />);
+    const component = render(<AddPost mode={mode} />);
 
     expect(component).toMatchSnapshot();
 
@@ -18,8 +20,6 @@ describe("Test AddPost component", () => {
 
   it("should click 'submitBtn'", () => {
     let clicked = false;
-    const mode = "add";
-
     render(<AddPost mode={mode} />);
 
     const button = document.getElementById("submitBtn");
