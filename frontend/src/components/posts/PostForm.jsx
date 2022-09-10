@@ -24,6 +24,7 @@ export const PostForm = (props) => {
   };
 
   const handleSubmitClick = (event) => {
+    // Only submit if values have changed
     event.preventDefault();
     props.handleSubmitClick(selectedPost);
   };

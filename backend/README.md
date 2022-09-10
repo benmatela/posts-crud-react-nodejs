@@ -17,6 +17,7 @@ This project uses the following environment variables:
 |NODE_ENV           | Node server value            | "development"      |
 |SERVER_PORT           | Node server value            | 3001      |
 |SERVER_HOSTNAME           | Node server value            | "0.0.0.0"      |
+|JSON_PLACEHOLDER_API_URL           | Thirdparty API            | "https://jsonplaceholder.typicode.com/posts"      |
 |CORS           | Node server value            | "http://localhost:3000"      |
 
 

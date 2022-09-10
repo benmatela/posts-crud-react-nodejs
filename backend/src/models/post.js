@@ -1,4 +1,4 @@
-class PostModel {
+module.exports = class PostModel {
   constructor(userId, id, title, body) {
     this.userId = userId;
     this.id = id;
@@ -6,5 +6,3 @@ class PostModel {
     this.body = body;
   }
 }
-
-module.exports = PostModel

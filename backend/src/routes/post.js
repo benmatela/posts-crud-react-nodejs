@@ -2,10 +2,12 @@ const express = require("express");
 const router = express.Router();
 const postService = require("../services/post");
 const logging = require("../utils/logging");
+const appconfig = require("../utils/appconfig");
 
 const NAMESPACE = "Post Routes";
 
 // Add Model validation
+
 router.get("/posts", async (req, res) => {
   logging.info(NAMESPACE, "/posts called.");
   try {
