@@ -13,9 +13,9 @@ describe("Test PrimaryButton component", () => {
 
     expect(component).toMatchSnapshot();
 
-    expect(document.getElementById("testBtn").innerHTML).toEqual(label);
+    expect(document.getElementById(id).innerHTML).toEqual(label);
 
-    expect(document.getElementById("testBtn").classList.contains("text-white"));
+    expect(document.getElementById(id).classList.contains(className));
   });
 
   it("should click 'testBtn'", () => {
@@ -30,7 +30,7 @@ describe("Test PrimaryButton component", () => {
       />
     );
 
-    const button = document.getElementById("testBtn");
+    const button = document.getElementById(id);
     fireEvent.click(button);
 
     expect(onClick).toBeCalled();
