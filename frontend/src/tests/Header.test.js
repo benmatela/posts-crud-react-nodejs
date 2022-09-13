@@ -9,6 +9,7 @@ describe("Test Header component", () => {
     const view = render(<BrowserRouter><Header /></BrowserRouter>);
 
     expect(view).toMatchSnapshot();
+
     const links = await (await screen.findAllByTestId("link")).length;
     expect(links).toEqual(2);
   });

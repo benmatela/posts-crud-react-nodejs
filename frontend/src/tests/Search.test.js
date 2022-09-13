@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render } from "@testing-library/react";
 import { Search } from "../components/shared/Search";
 
 afterEach(cleanup);
@@ -11,18 +11,18 @@ describe("Test Search component", () => {
   });
 
   it("should listen for search input", () => {
-    const handleSearchClick = jest.fn();
+    const handleSearchKeyUp = jest.fn();
 
-    const view = render(
+    render(
       <Search
-        handleSearchClick={handleSearchClick}
+        handleSearchKeyUp={handleSearchKeyUp}
         searchPlaceholder={"Search Posts"}
       />
     );
 
-    const button = document.getElementById("searchBar");
-    fireEvent.keyUp(button);
+    const input = document.getElementById("searchBar");
+    fireEvent.keyUp(input);
 
-    expect(handleSearchClick).toBeCalled();
+    expect(handleSearchKeyUp).toBeCalled();
   });
 });

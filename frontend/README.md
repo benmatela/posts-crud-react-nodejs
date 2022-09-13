@@ -69,7 +69,7 @@ const app = require("../src/index");
 import { cleanup, render } from "@testing-library/react";
 import { AddPost } from "../components/posts/AddPost";
 
-it("Should render", () => {
+it("should render", () => {
     const component = render(
         <AddPost mode={"add"} />
     );

@@ -11,9 +11,7 @@ describe("Post", () => {
         .expect(200)
         .then((res) => {
           const response = res._body;
-
           expect(response).to.be.a("array").of.length(100);
-
           done();
         })
         .catch((err) => done(err));
@@ -21,15 +19,13 @@ describe("Post", () => {
   });
 
   describe("GET post by id", () => {
-    it("should return a single a post", (done) => {
+    it("should return a single post", (done) => {
       request(app)
         .get("/api/v1/posts/1")
         .expect(200)
         .then((res) => {
           const response = res._body;
-
           expect(Number(response.id)).equal(1);
-
           done();
         })
         .catch((err) => done(err));
@@ -37,7 +33,7 @@ describe("Post", () => {
   });
 
   describe("CREATE new post", () => {
-    it("should create a single a post", (done) => {
+    it("should create a single post", (done) => {
       const newPost = new PostModel(0, 0, "Test", "This is a test");
       request(app)
         .post("/api/v1/posts")

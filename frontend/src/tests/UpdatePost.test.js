@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import { UpdatePost } from "../components/posts/UpdatePost";
 import { BrowserRouter } from "react-router-dom";
 
@@ -14,10 +14,10 @@ describe("Test UpdatePost component", () => {
 
     expect(view).toMatchSnapshot();
 
-    const deleteBtn = document.getElementById("deleteBtn");
+    const deleteBtn = screen.getByTestId("deleteBtn");
     expect(deleteBtn).toBeTruthy();
 
-    const submitBtn = document.getElementById("submitBtn");
+    const submitBtn = screen.getByTestId("submitBtn");
     expect(submitBtn).toBeTruthy();
   });
 });

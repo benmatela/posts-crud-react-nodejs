@@ -45,6 +45,8 @@ describe("Test PostForm component", () => {
     );
 
     expect(view).toMatchSnapshot();
+
+    expect(screen.getByTestId("submitBtn").innerHTML).toEqual("Submit");
   });
 
   it("should click 'submitBtn'", () => {

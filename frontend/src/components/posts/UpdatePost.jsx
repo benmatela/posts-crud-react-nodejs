@@ -27,7 +27,7 @@ export const UpdatePost = () => {
    * @param {*} data
    */
   const handleSubmitClick = async (data) => {
-    setLoaderSubmitMessage("Updating item...");
+    setLoaderSubmitMessage(`Updating item with ID ${data.id}...`);
     setLoaderDeleteMessage("");
     setSubmitting(true);
     setSuccessMessage("");
@@ -35,7 +35,7 @@ export const UpdatePost = () => {
 
     const updated = await updatePost(data);
     if (updated.status === 200) {
-      setSuccessMessage(`Post with ID ${data.id} successfully updated.`);
+      setSuccessMessage(`Successfully updated post with ID ${data.id}.`);
     } else {
       setErrorMessage(
         `Error while attempting to update post with ID ${data.id}.`

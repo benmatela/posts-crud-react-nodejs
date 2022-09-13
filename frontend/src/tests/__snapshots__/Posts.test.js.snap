@@ -14,12 +14,36 @@ Object {
         >
           Posts (0)
         </h1>
-        <h1
-          class="text-center text-[#28a745] md:text-4xl text-2xl mt-4 font-bold"
-          id="loader"
+        <div
+          class="m-3"
         >
-          Loading posts..
-        </h1>
+          <div>
+            <div
+              class="w-full mx-auto text-center"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root MuiInput-underline form-input w-[100%] md:w-[50%]"
+                data-testid="searchBar"
+              >
+                <input
+                  class="MuiInputBase-input MuiInput-input"
+                  id="searchBar"
+                  name="searchItem"
+                  placeholder="Search posts by title"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="m-3"
+          />
+          <div
+            class="overflow-y-scroll h-[700px] md:grid md:grid-cols-4"
+            id="postItems"
+          />
+        </div>
       </div>
     </div>
   </body>,
@@ -33,12 +57,36 @@ Object {
       >
         Posts (0)
       </h1>
-      <h1
-        class="text-center text-[#28a745] md:text-4xl text-2xl mt-4 font-bold"
-        id="loader"
+      <div
+        class="m-3"
       >
-        Loading posts..
-      </h1>
+        <div>
+          <div
+            class="w-full mx-auto text-center"
+          >
+            <div
+              class="MuiInputBase-root MuiInput-root MuiInput-underline form-input w-[100%] md:w-[50%]"
+              data-testid="searchBar"
+            >
+              <input
+                class="MuiInputBase-input MuiInput-input"
+                id="searchBar"
+                name="searchItem"
+                placeholder="Search posts by title"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="m-3"
+        />
+        <div
+          class="overflow-y-scroll h-[700px] md:grid md:grid-cols-4"
+          id="postItems"
+        />
+      </div>
     </div>
   </div>,
   "debug": [Function],

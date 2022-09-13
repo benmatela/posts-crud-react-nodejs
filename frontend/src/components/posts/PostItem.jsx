@@ -11,9 +11,9 @@ export const PostItem = (props) => {
 
   useEffect(() => {
     setPosts(props.posts);
-  });
+  }, [props.posts]);
 
-  return props.posts.map((post, i) => {
+  return posts.map((post, i) => {
     return (
       <div
         id={post.id}
@@ -27,13 +27,13 @@ export const PostItem = (props) => {
         <div className="px-6 py-4 m-2">
           <div
             className={
-              posts.length <= 9 ? "font-bold text-xl" : "font-bold text-l"
+              posts.length <= 8 ? "font-bold text-xl" : "font-bold text-l"
             }
           >
             <span
               id={"title" + post.id}
               data-testid={"title" + post.id}
-              className={posts.length <= 9 ? "m-2 text-xl" : "m-2"}
+              className={"m-2"}
             >
               ({post.id}). {post.title}
             </span>
@@ -42,12 +42,12 @@ export const PostItem = (props) => {
             id={"body" + post.id}
             data-testid={"body" + post.id}
             className={
-              posts.length <= 9
+              posts.length <= 8
                 ? "m-2 hidden md:flex text-xl"
                 : "m-2 hidden md:flex"
             }
           >
-            {posts.length <= 9
+            {posts.length <= 8
               ? post.body
               : String(post.body).slice(0, 82) + "..."}
           </p>

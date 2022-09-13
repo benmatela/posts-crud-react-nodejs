@@ -3,7 +3,7 @@ const axios = require("axios");
 
 const NAMESPACE = "Post Service";
 
-const apiURL = process.env.JSON_PLACEHOLDER_API_URL;
+const apiURL = process.env.JSON_PLACEHOLDER_API_URL + '/posts';
 
 const getPosts = async () => {
   // Add pagination

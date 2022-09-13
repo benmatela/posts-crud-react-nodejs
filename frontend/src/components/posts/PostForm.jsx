@@ -35,7 +35,7 @@ export const PostForm = (props) => {
     props.handleDeletePostClick(selectedPost);
   };
 
-  const handleTitleInpuChange = (event) => {
+  const handleTitleInputChange = (event) => {
     const post = new PostModel(
       selectedPost.userId,
       selectedPost.id,
@@ -74,7 +74,7 @@ export const PostForm = (props) => {
           className="form-input w-[100%] md:w-[50%]"
           defaultValue={selectedPost?.title}
           {...register("title", { required: true })}
-          onChange={handleTitleInpuChange}
+          onChange={handleTitleInputChange}
         />
         <br />
         <small className="text-[#d9534f]">
@@ -122,7 +122,15 @@ export const PostForm = (props) => {
           </div>
         )}
         {isUpdate ? (
-          !props.deleting ? (
+          props.deleting ? (
+            <h1
+              id="deleteLoader"
+              data-testid={"deleteLoader"}
+              className="text-center text-[#d9534f] loader font-bold"
+            >
+              {props.loaderDeleteMessage}
+            </h1>
+          ) : (
             <PrimaryButton
               id="deleteBtn"
               data-testid={"deleteBtn"}
@@ -131,14 +139,6 @@ export const PostForm = (props) => {
               onClick={(event) => handleDeletePostClick(event)}
               disabled={props.submitting || !modelValid()}
             />
-          ) : (
-            <h1
-              id="deleteLoader"
-              data-testid={"deleteLoader"}
-              className="text-center text-[#d9534f] loader font-bold"
-            >
-              {props.loaderDeleteMessage}
-            </h1>
           )
         ) : null}
 

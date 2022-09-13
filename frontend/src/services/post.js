@@ -1,24 +1,44 @@
 import axios from "axios";
 
-const postApiURL = "http://localhost:3001/api/v1/posts";
+const postApiURL = "https://jsonplaceholder.typicode.com/posts";
+// const postApiURL = "http://localhost:3001/api/v1/posts";
 
-// Add error handling
 export const getPosts = async () => {
-  return await axios.get(postApiURL);
+  try {
+    return await axios.get(postApiURL);
+  } catch (error) {
+    return error;
+  }
 };
 
 export const getPostById = async (id) => {
-  return await axios.get(`${postApiURL}/${id}`, );
+  try {
+    return await axios.get(`${postApiURL}/${id}`);
+  } catch (error) {
+    return error;
+  }
 };
 
 export const deletePostById = async (id) => {
-  return await axios.delete(`${postApiURL}/${id}`);
+  try {
+    return await axios.delete(`${postApiURL}/${id}`);
+  } catch (error) {
+    return error;
+  }
 };
 
 export const addPost = async (post) => {
-  return await axios.post(postApiURL, post);
+  try {
+    return await axios.post(postApiURL, post);
+  } catch (error) {
+    return error;
+  }
 };
 
 export const updatePost = async (post) => {
-  return await axios.put(postApiURL, post);
+  try {
+    return await axios.put(postApiURL, post);
+  } catch (error) {
+    return error;
+  }
 };

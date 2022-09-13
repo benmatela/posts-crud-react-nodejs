@@ -13,9 +13,12 @@ export const Posts = () => {
   const searchPlaceholder = "Search posts by title";
 
   useEffect(() => {
+    setIsLoading(true);
     getPosts()
       .catch((error) => {
         setErrorMessage("Error while attempting to get posts...");
+        setPosts([]);
+        setPostsStorage([]);
         setIsLoading(false);
       })
       .then((res) => {
@@ -30,7 +33,7 @@ export const Posts = () => {
    * Handle search input and get the searchItem
    * @param {*} searchItem
    */
-  const handleSearchClick = (searchItem) => {
+  const handleSearchKeyUp = (searchItem) => {
     if (String(searchItem).trim().length > 0) {
       setPosts(postsStorage);
       setPosts((current) =>
@@ -78,7 +81,7 @@ export const Posts = () => {
         <div className="m-3">
           <div hidden={errorMessage.length > 0}>
             <Search
-              handleSearchClick={handleSearchClick}
+              handleSearchKeyUp={handleSearchKeyUp}
               searchPlaceholder={searchPlaceholder}
             />
           </div>

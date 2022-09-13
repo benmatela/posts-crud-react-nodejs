@@ -20,6 +20,7 @@ export const AddPost = () => {
     setSubmitting(true);
     setSuccessMessage("");
     setErrorMessage("");
+    
     const newPost = await addPost(data);
     if (newPost.status === 200) {
       // Clear form after submitting

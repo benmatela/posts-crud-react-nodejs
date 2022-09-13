@@ -17,7 +17,7 @@ Object {
             class="font-bold text-xl"
           >
             <span
-              class="m-2 text-xl"
+              class="m-2"
               data-testid="title1"
               id="title1"
             >
@@ -51,7 +51,7 @@ nostrum rerum est autem sunt rem eveniet architecto
             class="font-bold text-xl"
           >
             <span
-              class="m-2 text-xl"
+              class="m-2"
               data-testid="title2"
               id="title2"
             >
@@ -88,7 +88,7 @@ qui aperiam non debitis possimus qui neque nisi nulla
           class="font-bold text-xl"
         >
           <span
-            class="m-2 text-xl"
+            class="m-2"
             data-testid="title1"
             id="title1"
           >
@@ -122,7 +122,7 @@ nostrum rerum est autem sunt rem eveniet architecto
           class="font-bold text-xl"
         >
           <span
-            class="m-2 text-xl"
+            class="m-2"
             data-testid="title2"
             id="title2"
           >

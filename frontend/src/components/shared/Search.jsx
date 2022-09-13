@@ -5,8 +5,8 @@ import Input from "@material-ui/core/Input";
 export const Search = (props) => {
   const { register, handleSubmit } = useForm();
 
-  const onSearch = (event) => {
-    props.handleSearchClick(event.target.value);
+  const handleSearchKeyUp = (event) => {
+    props.handleSearchKeyUp(event.target.value);
   };
 
   return (
@@ -16,7 +16,7 @@ export const Search = (props) => {
           data-testid={"searchBar"}
           className={"form-input w-[100%] md:w-[50%]"}
           placeholder={props.searchPlaceholder}
-          onKeyUp={event => handleSubmit(onSearch(event))}
+          onKeyUp={event => handleSubmit(handleSearchKeyUp(event))}
           {...register("searchItem", { required: false })}
         />
     </div>
