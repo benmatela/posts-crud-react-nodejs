@@ -22,7 +22,7 @@ export const AddPost = () => {
     setErrorMessage("");
     
     const newPost = await addPost(data);
-    if (newPost.status === 200) {
+    if (newPost.status === 201) {
       // Clear form after submitting
       setSuccessMessage(`Created post with ID ${newPost.data.id}.`);
     } else {

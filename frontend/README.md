@@ -48,11 +48,11 @@ The folder structure of this app:
 | **dist**                 | Contains the distributable (or output) from your build.  |
 | **public**                 | Public Files.  |
 | **src/assets**      | Contains assets for the app 
-| **src/component**      | Contains all the components of the app
+| **src/components**      | Contains all the components of the app
 | **src/services**      | Contains services accessed by the components
 | **src/tests**      | Contains all the tests for the app
 | **node_modules**         | Contains all  npm dependencies                                                            |
-| package.json             | Contains npm dependencies as well as [build scripts](#what-if-a-library-isnt-on-definitelytyped)   | tsconfig.json            | Config settings for compiling source code only written in TypeScript    
+| package.json             | Contains npm dependencies as well as build scripts(#what-if-a-library-isnt-on-definitelytyped)   | tsconfig.json            | Config settings for compiling source code only written in TypeScript    
 | tailwind.config.js              | Config settings for TailwindCSS  
 
 ## Testing

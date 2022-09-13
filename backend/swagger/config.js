@@ -75,7 +75,7 @@ module.exports = {
     },
     Posts: {
       type: "array",
-      $ref: "#/definitions/Posts",
+      $ref: "#/definitions/Post",
     },
   },
 };

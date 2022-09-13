@@ -37,7 +37,7 @@ export const addPost = async (post) => {
 
 export const updatePost = async (post) => {
   try {
-    return await axios.put(postApiURL, post);
+    return await axios.put(postApiURL + `/${post.id}`, post);
   } catch (error) {
     return error;
   }

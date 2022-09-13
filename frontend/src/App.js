@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import { Navbar } from "./components/layout/Navbar";
 import { AddPost } from "./components/posts/AddPost";
 import { Header } from "./components/posts/Header";
@@ -9,7 +9,7 @@ import { UpdatePost } from "./components/posts/UpdatePost";
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      <Router>
         <Navbar />
         <Header />
         <Routes>
@@ -21,7 +21,7 @@ function App() {
           <Route exact path="/posts/add" element={<AddPost />}></Route>
           <Route exact path="/posts/update" element={<UpdatePost />}></Route>
         </Routes>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }

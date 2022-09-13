@@ -61,8 +61,8 @@ const getTimeStamp = () => {
 };
 
 module.exports = {
-  info: info,
-  warn: warn,
-  error: error,
-  debug: debug,
+  info,
+  warn,
+  error,
+  debug
 };
