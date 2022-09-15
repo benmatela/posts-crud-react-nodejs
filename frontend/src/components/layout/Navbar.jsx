@@ -9,8 +9,17 @@ export const Navbar = () => {
   };
   return (
     <div className="text-white bg-[#3120E0] flex justify-between items-center h-24 w-[100%] mb-3 mx-auto px-4">
-      <h1 className="w-full text-[#F0EABE] text-2xl font-bold md:pl-24">Posts</h1>
+      <h1 className="w-full text-[#F0EABE] text-2xl font-bold md:pl-24">
+        <Link to="/" className="p-4">
+          Posts
+        </Link>
+      </h1>
       <ul className="hidden md:flex">
+        <li className="p-4 pr-24">
+          <Link to="/" className="p-2">
+            Home
+          </Link>
+        </li>
         <li className="p-4 pr-24">
           <Link to="/posts" className="p-4">
             Posts
@@ -32,8 +41,11 @@ export const Navbar = () => {
             : "fixed left-[-100%]"
         }
       >
-        <h1 className="w-full text-2xl font-bold mt-8 ml-2">Posts</h1>
+        <h1 className="w-full text-2xl font-bold mt-8 ml-2"><Link to="/">Posts</Link></h1>
         <ul className="pt-18 uppercase">
+          <li className="p-4 border-b border-t border-[#F0EABE]">
+            <Link to="/">Home</Link>
+          </li>
           <li className="p-4 border-b border-t border-[#F0EABE]">
             <Link to="/posts">Posts</Link>
           </li>
