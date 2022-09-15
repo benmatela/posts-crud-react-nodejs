@@ -52,20 +52,21 @@ The folder structure of this app:
 | **src/services**      | Contains services accessed by the components
 | **src/tests**      | Contains all the tests for the app
 | **node_modules**         | Contains all  npm dependencies                                                            |
-| package.json             | Contains npm dependencies as well as build scripts(#what-if-a-library-isnt-on-definitelytyped)   | tsconfig.json            | Config settings for compiling source code only written in TypeScript    
+| package.json             | Contains npm dependencies as well as build scripts
+| tsconfig.json            | Config settings for compiling source code only written in TypeScript    
 | tailwind.config.js              | Config settings for TailwindCSS  
 
 ## Testing
 The tests are  written in Mocha and the assertions done using Chai
 
-``` ts
+``` js
 const { expect } = require("chai");
 const request = require("supertest");
 const app = require("../src/index");
 ```
 
-### Example post.spec.js
-``` ts
+### Example AddPost.test.js
+``` js
 import { cleanup, render } from "@testing-library/react";
 import { AddPost } from "../components/posts/AddPost";
 

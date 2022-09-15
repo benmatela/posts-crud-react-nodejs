@@ -4,14 +4,14 @@ import { useState } from "react";
 export const PostItem = (props) => {
   const [posts, setPosts] = useState([]);
 
+  useEffect(() => {
+    setPosts(props.posts);
+  }, [props.posts]);
+ 
   const handleClick = (event) => {
     const index = event.currentTarget.id;
     props.handlePostItemClick(index);
   };
-
-  useEffect(() => {
-    setPosts(props.posts);
-  }, [props.posts]);
 
   return posts.map((post, i) => {
     return (
